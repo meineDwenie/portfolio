@@ -1,25 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from '../footer/footer.component';
-import { AboutComponent } from '../about/about.component';
-import { WorksComponent } from '../works/works.component';
-import { SkillsComponent } from '../skills/skills.component';
-import { ExperienceComponent } from '../experience/experience.component';
-import { ContactComponent } from '../contact/contact.component';
 
 @Component({
   selector: 'app-layout',
-  imports: [
-    HeaderComponent,
-    RouterOutlet,
-    FooterComponent,
-    AboutComponent,
-    WorksComponent,
-    SkillsComponent,
-    ExperienceComponent,
-    ContactComponent,
-  ],
+  imports: [CommonModule, HeaderComponent, RouterOutlet, FooterComponent],
   standalone: true,
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
