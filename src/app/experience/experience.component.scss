@@ -1,0 +1,42 @@
+.experience-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  //min-height: 100vh;
+}
+
+// EXPERIENCE
+.exp-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.exp-block {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 20px;
+  border: 1px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  width: calc(33.333% - 30px); /* Changed to 33.333% to fit 3 blocks per row */
+  max-width: 400px;
+  transition: transform 0.3s ease;
+}
+
+// FONTS
+span {
+  color: #408d4f;
+  font-weight: 700;
+}

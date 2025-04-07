@@ -1,0 +1,57 @@
+.skills-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  //height: 100vh;
+}
+
+// SKILLS
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; //center (stretch to enusr same height)
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.skills-block {
+  background-color: #171d18;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 20px;
+  border: 1px solid #272727;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  // Fixed dimensions
+  width: calc(33.333% - 30px); /* Changed to 33.333% to fit 3 blocks per row */
+  max-width: 300px;
+  min-height: 300px;
+  transition: transform 0.3s ease;
+
+  justify-content: space-between; /* Distributes space evenly */
+}
+
+.skills-block:hover {
+  background-color: rgb(162, 178, 164, 20%);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+  transform: matrix(0, 1, 1, 0, 0, 0);
+}
+
+.skills-block img {
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}

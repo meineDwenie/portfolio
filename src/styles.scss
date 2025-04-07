@@ -1,0 +1,292 @@
+html,
+body {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0px; // removed the top padding solved spacing issues
+
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+* {
+  box-sizing: border-box; /* Ensure all elements use border-box model */
+}
+
+// FONTS
+h6 {
+  font-weight: 300;
+  font-size: 18px;
+  font-family: "Monomaniac One", sans-serif;
+  margin: 10px 0px;
+  color: #000000;
+  background-color: #dbdcd8;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+h5 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 500;
+  font-size: 22px;
+  font-style: normal;
+  margin: 0;
+  padding-top: 20px;
+  color: #f3f3f3;
+
+  min-height: 3rem; /* Sets a minimum height for all titles */
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.works-block h5 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 500;
+  font-size: 22px;
+  font-style: normal;
+  margin: 0;
+  padding-top: 20px;
+  color: #f3f3f3;
+
+  min-height: 3rem; /* Sets a minimum height for all titles */
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  line-height: 1.4;
+
+  display: -webkit-box;
+  //-webkit-line-clamp: 2; /* Limits to 2 lines max */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+h4 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 500;
+  font-size: 30px;
+  font-style: normal;
+  padding-top: 30px;
+  margin: 20px;
+  color: #f3f3f3;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 700;
+  font-size: 80px;
+  font-style: normal;
+  color: #f3f3f3;
+  margin-top: 0px;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 500;
+  font-size: 50px;
+  margin: 0;
+  font-style: normal;
+  color: #f3f3f3;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding-left: 40px;
+  font-weight: 900;
+  font-size: 100px;
+  max-width: 800px;
+  margin: 0;
+  font-style: normal;
+  color: #f3f3f3;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  font-style: normal;
+  text-align: center;
+  color: #f3f3f3;
+}
+
+.exp-block p,
+.skills-block p,
+.works-block p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  font-style: normal;
+  text-align: center;
+  color: #f3f3f3;
+}
+
+span {
+  color: #408d4f;
+  font-weight: 700;
+}
+
+/* **** RESPONSIVE */
+// Global
+@media screen and (max-width: 1024px) {
+  /* Home Section */
+  .homeparent {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .child {
+    width: 100%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 50px;
+    padding-left: 0;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  /* About Section */
+  .aboutparent {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .aboutchild {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .experience-numbers {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Skills Section */
+  .skills-block {
+    width: calc(50% - 30px); /* 2 blocks per row */
+  }
+
+  /* Experience Section */
+  .exp-block {
+    width: calc(50% - 30px); /* 2 blocks per row */
+  }
+
+  /* Works Section */
+  .works-block {
+    width: calc(50% - 30px); /* 2 blocks per row */
+  }
+
+  /* Fonts */
+  h3 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  // CONTACT
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .contact-image-container,
+  .contact-form-container {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+// MOBILE SPECIFIC ADJUSTMENTS RESPONSIVE
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .homeparent {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+
+    align-content: center;
+    justify-content: center;
+
+    h1 {
+      font-size: 40px;
+      max-width: 400px;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 25px;
+      text-align: center;
+    }
+
+    .desc-container {
+      align-content: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .desc {
+      font-size: 18px;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .child {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .downloadButton {
+    font-size: 12px;
+  }
+
+  .downloadButton img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .aboutparent {
+    .aboutchild {
+      &:first-child {
+        margin-bottom: 40px; // Add space below the circle image
+      }
+    }
+  }
+
+  .contact-content {
+    flex-direction: column; // makes perfect mobile size
+  }
+
+  .works-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,51 @@
+<footer id="footer">
+  <div class="footer_container">
+    <div class="logo">
+      <h1>EAN</h1>
+    </div>
+
+    <div class="nav-container" id="nav-container">
+      <nav>
+        <a
+          href="javascript:void(0)"
+          (click)="goToSection('home')"
+          class="home-link"
+          >HOME</a
+        >
+        <a
+          href="javascript:void(0)"
+          (click)="goToSection('about')"
+          class="about-link"
+          >BIO</a
+        >
+        <a
+          href="javascript:void(0)"
+          (click)="goToSection('works')"
+          class="works-link"
+          >WORKS</a
+        >
+        <a
+          href="javascript:void(0)"
+          (click)="goToSection('skills')"
+          class="skills-link"
+          >SKILLS</a
+        >
+        <a
+          href="javascript:void(0)"
+          (click)="goToSection('experience')"
+          class="experience-link"
+          >EXPERIENCE</a
+        >
+      </nav>
+    </div>
+
+    <div class="downloadButton" (click)="downloadCV()">
+      Download CV
+      <img src="\assets\images\download_icon.png" alt="download icon" />
+    </div>
+  </div>
+</footer>
+
+<div class="footer_down">
+  <p>Copyrights &copy; 2025 <span>ean</span>, All Rights Reserved</p>
+</div>

@@ -1,0 +1,197 @@
+header {
+  background-color: rgb(3, 77, 58);
+  color: rgb(220, 220, 220);
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Monomaniac One", sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.logo h1 {
+  font-family: "Monomaniac One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 28px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+nav a {
+  color: rgb(220, 220, 220);
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-button {
+  margin-left: 20px;
+}
+
+.contact-link {
+  background-color: #171d18;
+  padding: 8px 40px;
+  border-radius: 10px;
+  border: 1px solid white;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  color: rgb(220, 220, 220);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.contact-link:hover {
+  background-color: #2c3e36;
+  transform: scale(1.05);
+}
+
+.about-link:hover,
+.home-link:hover,
+.works-link:hover,
+.skills-link:hover,
+.experience-link:hover {
+  text-decoration: none;
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger active state (X shape) */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Adjustments for screens up to 1024px */
+@media (max-width: 1024px) {
+  nav a {
+    margin: 0 10px;
+    font-size: 16px;
+  }
+
+  .contact-link {
+    padding: 8px 20px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  header {
+    padding: 0 15px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-container {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgb(3, 77, 58);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-container.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav a {
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .contact-button {
+    margin: 15px 0 5px 0;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .contact-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 350px) {
+  .logo h1 {
+    font-size: 24px;
+  }
+
+  header {
+    padding: 0 10px;
+  }
+}

@@ -1,0 +1,80 @@
+<!-- HTML for the header -->
+<header>
+  <div class="logo">
+    <h1>eEAN</h1>
+  </div>
+
+  <!-- Hamburger Menu Button (only shows on mobile) -->
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navigation container with links -->
+  <div class="nav-container" id="nav-container">
+    <nav>
+      <a
+        href="javascript:void(0)"
+        (click)="goToSection('home')"
+        class="home-link"
+        >HOME</a
+      >
+      <a
+        href="javascript:void(0)"
+        (click)="goToSection('about')"
+        class="about-link"
+        >BIO</a
+      >
+      <a
+        href="javascript:void(0)"
+        (click)="goToSection('works')"
+        class="works-link"
+        >WORKS</a
+      >
+      <a
+        href="javascript:void(0)"
+        (click)="goToSection('skills')"
+        class="skills-link"
+        >SKILLS</a
+      >
+      <a
+        href="javascript:void(0)"
+        (click)="goToSection('experience')"
+        class="experience-link"
+        >EXPERIENCE</a
+      >
+    </nav>
+
+    <div class="contact-button">
+      <a
+        href="javascript:void(0)"
+        (click)="goToSection('contact')"
+        class="contact-link"
+        >Contact</a
+      >
+    </div>
+  </div>
+</header>
+
+<!-- JavaScript for the hamburger menu toggle -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navContainer = document.getElementById("nav-container");
+
+    menuToggle.addEventListener("click", function () {
+      navContainer.classList.toggle("active");
+      menuToggle.classList.toggle("active");
+    });
+
+    // Close menu when a nav link is clicked
+    const navLinks = document.querySelectorAll("nav a, .contact-link");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        navContainer.classList.remove("active");
+        menuToggle.classList.remove("active");
+      });
+    });
+  });
+</script>
