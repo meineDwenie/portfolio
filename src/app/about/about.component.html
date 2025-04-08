@@ -1,9 +1,16 @@
 <div>
   <!-- ABOUT -->
   <section id="about">
-    <div class="aboutparent" style="background-color: #142820">
+    <div class="aboutparent">
       <div class="aboutchild">
-        <img src="assets/images/cartoon.png" alt="cartoonME" />
+        <div class="image-container">
+          <img src="assets/images/cartoon.png" alt="Edwin Nuñez" />
+          <div class="rotating-border">
+            <div class="border-circle"></div>
+            <div class="border-circle"></div>
+            <div class="glow"></div>
+          </div>
+        </div>
       </div>
 
       <div class="aboutchild">
@@ -35,7 +42,7 @@
         <!-- Download CV and Social Media -->
         <div class="download-social-container">
           <div class="downloadButton" (click)="downloadCV()">
-            Download CV
+            <span>Download CV</span>
             <img src="assets/images/download_icon.png" alt="download icon" />
           </div>
 

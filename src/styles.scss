@@ -47,9 +47,10 @@ h5 {
   line-height: 1.4;
 }
 
-.works-block h5 {
+.works-block h5,
+.works-block-web h5 {
   font-family: "Poppins", sans-serif;
-  text-align: center;
+  text-align: left;
   font-weight: 500;
   font-size: 22px;
   font-style: normal;
@@ -57,17 +58,17 @@ h5 {
   padding-top: 20px;
   color: #f3f3f3;
 
-  min-height: 3rem; /* Sets a minimum height for all titles */
-  max-width: 200px;
+  min-height: auto; /* Sets 3rem a minimum height for all titles */
+  max-width: 400px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
   overflow: hidden;
   line-height: 1.4;
 
   display: -webkit-box;
-  //-webkit-line-clamp: 2; /* Limits to 2 lines max */
+  -webkit-line-clamp: 2; /* Limits to 2 lines max */
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   word-wrap: break-word;
@@ -88,10 +89,11 @@ h3 {
   font-family: "Poppins", sans-serif;
   text-align: center;
   font-weight: 700;
-  font-size: 80px;
+  font-size: 40px;
   font-style: normal;
   color: #f3f3f3;
   margin-top: 0px;
+  margin-bottom: 40px;
 }
 
 h2 {
@@ -133,6 +135,16 @@ p {
   font-size: 16px;
   font-style: normal;
   text-align: center;
+  color: #f3f3f3;
+}
+
+.works-block p,
+.works-block-web p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  font-style: normal;
+  text-align: left;
   color: #f3f3f3;
 }
 
