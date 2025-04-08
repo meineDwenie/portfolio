@@ -9,13 +9,24 @@
 }
 
 .works-parent h4 {
-  font-size: 1.8rem;
+  font-size: 22px;
   color: #d5dd6b;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   position: relative;
   display: center;
-  text-shadow: #8f942c 0px 0px 4px;
+  padding-bottom: 10px;
+}
+
+.works-parent h4::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 80px;
+  height: 3px;
+  background-color: #d5dd6b;
+  transform: translateX(-50%);
 }
 
 .worksDesc {
@@ -107,7 +118,7 @@
   bottom: -60px;
   left: 0;
   width: 100%;
-  background: rgba(20, 40, 32, 0.9);
+  background: rgba(12, 24, 20, 0.9);
   backdrop-filter: blur(2px);
   padding: 20px;
   box-sizing: border-box;
@@ -122,7 +133,7 @@
 
 /* Typography for Info */
 .works-info h5 {
-  color: #d1dacc;
+  color: #d9d9d9;
   font-size: 18px;
   margin: 0 0 8px 0;
   padding-top: 2px;
@@ -141,13 +152,13 @@
 .project-link {
   display: inline-block;
   margin-top: 15px;
-  background-color: rgba(91, 212, 107, 0.2);
+  background-color: rgb(213, 221, 107);
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 16px;
   font-style: normal;
   text-align: left;
-  color: #99dca2;
+  color: #142b17;
   padding: 8px 15px;
   border-radius: 5px;
   font-size: 0.8rem;
@@ -161,6 +172,34 @@
   transform: translateY(-2px);
 }
 
+// Added BLURRING EFFECTS
+
+// Default state
+.works-container .works-block,
+.works-container .works-block-web {
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+// Blur all block
+.works-container:hover .works-block,
+.works-container:hover .works-block-web {
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+// restore the specific block being hovered
+.works-container:hover .works-block:hover,
+.works-container:hover .works-block-web:hover {
+  opacity: 1;
+  filter: blur(0);
+}
+
+// Make sure the block being hovered appears on top
+.works-container:hover .works-block-web:hover {
+  z-index: 10;
+}
+
+/* ---------------------------------------*/
 /* Responsive Adjustments */
 @media (max-width: 992px) {
   .works-block {

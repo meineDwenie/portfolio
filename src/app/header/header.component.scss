@@ -73,13 +73,18 @@ nav a {
   transform: scale(1.05);
 }
 
-.about-link:hover,
-.home-link:hover,
-.works-link:hover,
-.skills-link:hover,
-.experience-link:hover {
-  text-decoration: none;
-  color: #ffffff;
+// Hover blur all links except the hovered one
+nav:hover a {
+  opacity: 0.3;
+  filter: blur(1px);
+  transition: all 0.3s ease;
+}
+
+// Hover standout specific link
+nav a:hover {
+  opacity: 1;
+  filter: blur(0);
+  color: #e7e7e7;
   transform: scale(1.2);
 }
 

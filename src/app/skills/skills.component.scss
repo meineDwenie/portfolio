@@ -65,6 +65,8 @@
 /* Card flip on hover */
 .skills-card:hover .skills-card-inner {
   transform: rotateY(180deg);
+  border-radius: 20px;
+  border-color: #ffffff;
 }
 
 /* Position front and back sides */
@@ -137,6 +139,30 @@
   font-size: 1.2rem;
   font-weight: bold;
   color: #ffffff;
+}
+
+// Added BLURRING EFFECTS
+
+// Default state - everything normal
+.skills-container .skills-card {
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+// When hovering over the container, blur all cards
+.skills-container:hover .skills-card {
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+// Restore the specific card being hovered
+.skills-container:hover .skills-card:hover {
+  opacity: 1;
+  filter: blur(0);
+}
+
+// Make sure the card being hovered appears on top
+.skills-card:hover {
+  z-index: 10;
 }
 
 /* Responsive design */

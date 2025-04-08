@@ -189,10 +189,14 @@
 .downloadButton:hover {
   transform: scale(1.05);
   cursor: pointer;
-  color: #ffffff;
+  color: #d5d5d5;
   border: 2px solid #5bd46b;
   box-shadow: 0 10px 15px rgba(213, 213, 10, 0.2);
   background-color: #3f7119;
+}
+
+.downloadButton:hover span {
+  color: #d5d5d5;
 }
 
 .downloadButton img {
