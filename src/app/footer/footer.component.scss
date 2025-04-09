@@ -5,6 +5,7 @@
   font-size: 16px;
   padding-top: 30px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -19,21 +20,54 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  text-align: center;
 }
 
 .footer_container {
   display: flex;
   align-items: center;
-  justify-content: space-bet;
+  //justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 20px;
+}
+
+div {
+  gap: 30px;
 }
 
 span {
-  color: #0f6d1b;
+  color: #e4e4e4;
+  background: none;
 }
 
-.logo {
-  align-items: center;
-  justify-content: center;
+.logo a {
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.logo:hover {
+  transform: scale(1.12);
+  transition: all 0.3s ease;
+}
+
+.logo h1 {
+  font-family: "Monomaniac One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+}
+
+.logo span {
+  background: linear-gradient(270deg, #d5dd6b 10%, #408d4f 100%);
+  background-clip: text;
+  color: transparent;
 }
 
 h1 {
@@ -45,19 +79,37 @@ h1 {
   align-items: center;
   justify-content: center;
   font-size: 30px;
-  color: #0f6d1b;
+  color: #ececec;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0;
 }
 
 nav a {
   color: rgb(220, 220, 220);
   text-decoration: none;
   font-weight: bold;
-  margin: 0 20px;
+  margin: 0 15px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
   transition: color 0.3s ease, transform 0.2s ease;
+}
+
+// Hover standout specific link
+nav a:hover {
+  opacity: 1;
+  filter: blur(0);
+  color: #e7e7e7;
+  transform: scale(1.2);
+  //color: #d5dd6b;
+  border-bottom: 1px solid #d5dd6b;
+  resize: none;
 }
 
 // DOWNLOAD BUTTON
@@ -67,14 +119,16 @@ nav a {
   justify-content: center;
   background-color: #d5dd6b; /* Solid green background */
   color: #171d18;
-  padding: 8px 10px;
+  padding: 4px 12px;
   border-radius: 20px;
   border: 2px solid #eaeaea;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
+  font-size: 14px;
   text-decoration: none;
   transition: transform 0.3s ease;
   box-shadow: 6px 6px 6px rgba(255, 255, 254, 0.1);
+  margin: 2px 0;
 }
 
 .downloadButton:hover {
@@ -83,19 +137,91 @@ nav a {
   color: #ffffff;
   border: 1px solid #04360b;
   box-shadow: 0 20px 10px rgba(213, 213, 10, 0.1);
-  background-color: darken($color: #3f7119, $amount: 0);
+  background-color: #3f7119;
 }
 
 .downloadButton img {
-  width: 40px;
-  height: 40px;
+  width: 26px;
+  height: 26px;
+  margin-left: 0;
   max-width: 100%; // Ensure image is responsive
   max-height: 30%; // Limit image height
   object-fit: contain; // Maintain image aspect ratio
 }
 
-.downloadButton img {
-  width: 30px;
-  height: 30px;
-  margin-left: 20px;
+// RESPONSIVE STYLES
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  #footer {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+
+  .footer_container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer_container div {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer_down {
+    padding: 4px 0 20px 0;
+  }
+
+  .footer_down p {
+    font-size: 14px;
+  }
+
+  .downloadButton {
+    max-width: 50%;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  nav {
+    margin: 0 0;
+  }
+
+  nav a {
+    margin: 2px 10px;
+  }
+
+  .logo {
+    margin: 8px 0;
+  }
+
+  .downloadButton {
+    margin: 6px 0;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .logo h1 {
+    font-size: 20px;
+  }
+
+  nav a {
+    font-size: 14px;
+    margin: 5px;
+  }
+
+  .downloadButton {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+
+  .downloadButton img {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+  }
 }

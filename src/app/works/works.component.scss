@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 100vh;
+  //min-height: 100vh;
   padding: 5rem 0;
   background-color: #142820;
 }
@@ -29,16 +29,6 @@
   transform: translateX(-50%);
 }
 
-.worksDesc {
-  font-size: 17.5px;
-  line-height: 1.6;
-  margin: 0;
-  max-width: 700px;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #d5d5d5;
-}
-
 /* Works Container Styles */
 .works-container {
   display: flex;
@@ -60,15 +50,15 @@
   overflow: hidden;
   position: relative;
   width: calc(33.333% - 30px);
-  max-width: 350px;
-  min-width: 280px;
+  max-width: 500px;
+  min-width: 20px;
   height: 600px;
   transition: all 0.4s ease;
 }
 
 .works-block:hover {
   border: 1px solid #5bd46b;
-  box-shadow: 0 15px 25px rgba(91, 212, 107, 0.2);
+  box-shadow: 0 15px 25px rgba(213, 221, 107, 0.4);
   transform: translateY(-10px);
 }
 
@@ -81,14 +71,14 @@
   position: relative;
   width: calc(50% - 30px);
   max-width: 500px;
-  min-width: 300px;
+  min-width: 350px;
   height: 350px;
   transition: all 0.4s ease;
 }
 
 .works-block-web:hover {
   border: 1px solid #5bd46b;
-  box-shadow: 0 15px 25px rgba(91, 212, 107, 0.2);
+  box-shadow: 0 15px 25px rgba(213, 221, 107, 0.4);
   transform: translateY(-10px);
 }
 
@@ -136,7 +126,7 @@
   color: #d9d9d9;
   font-size: 18px;
   margin: 0 0 8px 0;
-  padding-top: 2px;
+  padding-top: 0;
   font-weight: 600;
 }
 

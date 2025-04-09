@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 60px 0;
-  //min-height: 100vh;
+  padding: 5rem 0;
+  min-height: 100vh;
 }
 
 // EXPERIENCE
@@ -33,10 +33,4 @@
   width: calc(33.333% - 30px); /* Changed to 33.333% to fit 3 blocks per row */
   max-width: 400px;
   transition: transform 0.3s ease;
-}
-
-// FONTS
-span {
-  color: #408d4f;
-  font-weight: 700;
 }

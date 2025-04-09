@@ -7,12 +7,29 @@ body {
   padding: 0;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  overflow-x: hidden; // Prevent horizontal scrolling
+  box-sizing: border-box; // Include padding and border in element's total width and height
+
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 * {
-  box-sizing: border-box; /* Ensure all elements use border-box model */
+  box-sizing: border-box; // Ensure all elements use border-box model
+  font-family: "Poppins", sans-serif;
+}
+
+// Stating variables
+:root {
+  --bg-color: #142820;
+  --second-bg-color: #171d18; // Footer
+  --header-bg-color: #034d3a; // Header
+  --highlight-color: #4caf50; // Highlight numbers
+  --span-color: #408d4f; // Span
+  --button-color: #d5dd6b; // Button
+  --text-color: #f3f3f3;
+  --second-text-color: #d5d5d5;
+  --font-family: "Poppins", sans-serif;
 }
 
 // FONTS
@@ -80,7 +97,7 @@ h4 {
   font-weight: 500;
   font-size: 30px;
   font-style: normal;
-  padding-top: 30px;
+  padding-top: 0;
   margin: 20px;
   color: #f3f3f3;
 }
@@ -89,7 +106,7 @@ h3 {
   font-family: "Poppins", sans-serif;
   text-align: center;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 50px;
   font-style: normal;
   color: #f3f3f3;
   margin-top: 0px;
@@ -100,19 +117,19 @@ h2 {
   font-family: "Poppins", sans-serif;
   text-align: center;
   font-weight: 500;
-  font-size: 50px;
+  font-size: 60px;
   margin: 0;
   font-style: normal;
-  color: #f3f3f3;
+  color: #4caf50;
 }
 
 h1 {
   font-family: "Poppins", sans-serif;
   text-align: center;
   padding-left: 40px;
-  font-weight: 900;
-  font-size: 100px;
-  max-width: 800px;
+  font-weight: 700;
+  font-size: 70px;
+  max-width: 600px;
   margin: 0;
   font-style: normal;
   color: #f3f3f3;
@@ -122,6 +139,15 @@ p {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 14px;
+  font-style: normal;
+  text-align: center;
+  color: #f3f3f3;
+}
+
+.child p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
   font-style: normal;
   text-align: center;
   color: #f3f3f3;
@@ -149,8 +175,12 @@ p {
 }
 
 span {
-  color: #408d4f;
+  //color: #408d4f;
+  background: linear-gradient(270deg, #d5dd6b 10%, #408d4f 100%);
+  background-clip: text;
+  color: transparent;
   font-weight: 700;
+  text-shadow: #171d18 0 10px 10px 10px;
 }
 
 /* **** RESPONSIVE */
