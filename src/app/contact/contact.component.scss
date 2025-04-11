@@ -34,6 +34,9 @@
 .contact-form-container {
   flex: 1;
   width: 100%;
+  background-color: rgba(12, 20, 14, 0.7);
+  border-radius: 20px;
+  padding: 0 20px 20px;
 }
 
 input[type="text"],
@@ -44,10 +47,16 @@ textarea {
   padding: 12px;
   border: 1px solid #092603;
   border-radius: 12px;
-  background-color: #e0e3b7;
+  background-color: #0e0f0d;
   resize: vertical;
-
+  color: #e0e0e0;
   font-family: "Poppins", sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  color: #e0e0e0; /* Change text color to white on focus */
 }
 
 label {
@@ -56,8 +65,8 @@ label {
 }
 
 ::placeholder {
-  color: rgba(64, 141, 79, 0.8);
-  font-weight: 600;
+  color: rgba(211, 235, 215, 0.4);
+  font-weight: 300;
   font-size: medium;
 }
 
@@ -86,7 +95,7 @@ input[type="submit"]:hover {
 }
 
 .container {
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: transparent; //#424242
   padding: 10px;
 }
@@ -94,6 +103,12 @@ input[type="submit"]:hover {
 .col-75 {
   float: left;
   width: 100%;
+}
+
+.col-75:hover {
+  border: 1px solid #5bd46b;
+  border-radius: 10px;
+  box-shadow: 0 2px 25px rgba(213, 221, 107, 0.2);
 }
 
 /* Clear floats after the columns */

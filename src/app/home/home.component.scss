@@ -14,14 +14,16 @@ section {
 .home-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-  //justify-content: end;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  justify-content: center;
   //padding-right: 20px;
 }
 
 .home-content div {
   display: flex;
+  align-items: left;
   justify-content: center;
   gap: 10px; // Adds space between the spans
 }
@@ -41,20 +43,23 @@ section {
   font-weight: 800;
 }
 
+.home-content h1,
+h3 {
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
 // IMAGE
 .child-image-container {
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  max-width: 500px; /* Use max-width for responsiveness */
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
   box-shadow: 0 6px 20px rgba(189, 232, 16, 0.3);
-  transition: 0.4s ease-in;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  aspect-ratio: 1 / 1; /* Enforces 1:1 aspect ratio */
 }
 
 .child-image-container:hover {
@@ -71,9 +76,9 @@ section {
 .child-image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; // Ensures the image covers the container without distortion
+  object-fit: cover;
   border-radius: 50%;
-  aspect-ratio: 1 / 1; /* Enforces 1:1 aspect ratio */
+  aspect-ratio: 1 / 1;
 }
 
 .home-content img {
@@ -86,9 +91,9 @@ section {
   background-color: transparent;
   padding: 8px 16px;
   border-radius: 18px;
-  color: #f3f3f3;
+  color: rgba(243, 243, 243, 0.7);
   font-weight: 200;
-  border: 1px solid #f3f3f3;
+  border: 1px solid rgba(243, 243, 243, 0.2);
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   display: inline-block; // Ensures the span respects padding and border
@@ -182,6 +187,6 @@ section {
 
   .desc-container {
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
   }
 }

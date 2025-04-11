@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Typed from 'typed.js';
+import { AnimationService } from '../services/animation.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +10,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  // TYping multiple words
+  ngAfterViewInit(): void {
+    const options = {
+      strings: [
+        'Frontend Developer',
+        'UX/ UI Designer',
+        'Web Developer',
+        ' App Developer',
+      ],
+      typeSpeed: 60,
+      backSpeed: 20,
+      backDelay: 1200,
+      loop: true,
+    };
+
+    new Typed('.typed-text', options);
+  }
+
   downloadCV(): void {
     const link = document.createElement('a');
     link.setAttribute('target', '_blank');

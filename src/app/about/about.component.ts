@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { AnimationService } from '../services/animation.service';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +10,43 @@ import { Router } from '@angular/router';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
 })
-export class AboutComponent {
+export class AboutComponent implements AfterViewInit, OnDestroy {
+  private routerSubscription: Subscription | null = null;
+  private readonly COMPONENT_ID = 'about-component';
+
+  constructor(
+    private router: Router,
+    private animationService: AnimationService
+  ) {}
+
+  ngAfterViewInit(): void {
+    // Initial setup
+    this.setupAnimations();
+
+    // Listen for route changes
+    this.routerSubscription = this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        // Reset animations when navigating back to this component
+        this.setupAnimations();
+      });
+  }
+
+  ngOnDestroy(): void {
+    // Clean up observer and subscription when component is destroyed
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
+    this.animationService.cleanupObserver(this.COMPONENT_ID);
+  }
+
+  setupAnimations(): void {
+    this.animationService.setupAnimations(
+      this.COMPONENT_ID,
+      '.aboutchild h3, .aboutchild p, .experience-numbers, .experience-block, .download-social-container'
+    );
+  }
+
   goToSection(sectionId: string): void {
     // Ensure the use of ViewportScroller for Angular's recommended approach
     const element = document.getElementById(sectionId);

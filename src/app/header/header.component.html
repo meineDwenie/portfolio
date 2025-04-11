@@ -1,82 +1,41 @@
-<!-- HTML for the header -->
 <header>
   <div class="logo">
-    <a href="javascript:void(0)" (click)="goToSection('home')" class="home-link"
-      ><h1>Ed<span>win.</span></h1></a
+    <a
+      href="javascript:void(0)"
+      (click)="goToSection('home')"
+      class="home-link"
     >
+      <h1>Ed<span>win.</span></h1>
+    </a>
   </div>
 
-  <!-- Hamburger Menu Button (only shows on mobile) -->
-  <div class="menu-toggle" id="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
+  <!-- Hamburger Menu Button -->
+  <div class="menu-toggle" [class.active]="isMenuActive" (click)="toggleMenu()">
+    <i class="bx bx-menu"></i>
+      <i class="bx bx-x"></i>
   </div>
 
   <!-- Navigation container with links -->
-  <div class="nav-container" id="nav-container">
+  <div class="nav-container" [class.active]="isMenuActive">
     <nav>
       <a
+        *ngFor="let item of navItems"
         href="javascript:void(0)"
-        (click)="goToSection('home')"
-        class="home-link"
-        >HOME</a
+        (click)="handleNavClick(item.id)"
+        class="{{ item.id }}-link"
       >
-      <a
-        href="javascript:void(0)"
-        (click)="goToSection('about')"
-        class="about-link"
-        >BIO</a
-      >
-      <a
-        href="javascript:void(0)"
-        (click)="goToSection('works')"
-        class="works-link"
-        >WORKS</a
-      >
-      <a
-        href="javascript:void(0)"
-        (click)="goToSection('skills')"
-        class="skills-link"
-        >SKILLS</a
-      >
-      <a
-        href="javascript:void(0)"
-        (click)="goToSection('experience')"
-        class="experience-link"
-        >EXPERIENCE</a
-      >
+        {{ item.label }}
+      </a>
     </nav>
 
-    <div class="contact-button">
+    <div class="contact-button" *ngIf="showContactButton">
       <a
         href="javascript:void(0)"
-        (click)="goToSection('contact')"
+        (click)="handleNavClick('contact')"
         class="contact-link"
-        >Contact Me</a
       >
+        Contact Me
+      </a>
     </div>
   </div>
 </header>
-
-<!-- JavaScript for the hamburger menu toggle -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menu-toggle");
-    const navContainer = document.getElementById("nav-container");
-
-    menuToggle.addEventListener("click", function () {
-      navContainer.classList.toggle("active");
-      menuToggle.classList.toggle("active");
-    });
-
-    // Close menu when a nav link is clicked
-    const navLinks = document.querySelectorAll("nav a, .contact-link");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", function () {
-        navContainer.classList.remove("active");
-        menuToggle.classList.remove("active");
-      });
-    });
-  });
-</script>

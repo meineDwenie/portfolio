@@ -2,7 +2,7 @@ header {
   background-color: rgba(3, 77, 58, 0.3);
   backdrop-filter: blur(10px);
   color: rgb(220, 220, 220);
-  padding: 0px 20px;
+  padding: 20px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,7 +40,6 @@ header {
 }
 
 .logo span {
-  //color: #d5dd6b;
   background: linear-gradient(270deg, #d5dd6b 10%, #408d4f 100%);
   background-clip: text;
   color: transparent;
@@ -50,6 +49,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 0 0 90px;
   flex-grow: 1;
 }
 
@@ -77,19 +77,15 @@ nav a {
 }
 
 .contact-link {
-  //background-color: #171d18;
   background: linear-gradient(270deg, #81b30c 40%, #30630d 100%);
-  //background-clip: text;
   color: white;
   padding: 8px 30px;
   border-radius: 20px;
-  //border: 1px solid white;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  //color: rgb(220, 220, 220);
   text-decoration: none;
   text-wrap: nowrap;
   display: inline-block;
@@ -123,20 +119,34 @@ nav a:hover {
 .menu-toggle {
   display: none;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   width: 30px;
-  height: 21px;
+  height: 30px;
   cursor: pointer;
   z-index: 1001;
 }
 
-.menu-toggle span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: white;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+.menu-toggle i {
+  font-size: 30px;
+  color: white;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+}
+
+.menu-toggle .bx-x {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.menu-toggle.active .bx-menu {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.menu-toggle.active .bx-x {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Hamburger active state (X shape) */
@@ -152,10 +162,16 @@ nav a:hover {
   transform: translateY(-9px) rotate(-45deg);
 }
 
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+}
+
 /* Adjustments for screens up to 1024px */
 @media (max-width: 1024px) {
   nav a {
-    margin: 0 10px;
+    margin: 20px 10px;
     font-size: 16px;
   }
 
@@ -177,14 +193,16 @@ nav a:hover {
 
   .nav-container {
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 0;
     width: 100%;
-    background-color: rgb(3, 77, 58);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: rgba(2, 26, 20, 0.9);
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
-    transform: translateY(-150%);
+    transform: translateX(100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -192,7 +210,7 @@ nav a:hover {
   }
 
   .nav-container.active {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
     visibility: visible;
   }

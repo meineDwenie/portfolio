@@ -8,6 +8,10 @@
   background-color: #142820;
 }
 
+.works-parent h3 {
+  margin: 20px 0 20px;
+}
+
 .works-parent h4 {
   font-size: 22px;
   color: #d5dd6b;
@@ -46,7 +50,7 @@
 .works-block {
   background-color: transparent;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 6px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   position: relative;
   width: calc(33.333% - 30px);
@@ -65,8 +69,8 @@
 /* Website Works Block */
 .works-block-web {
   background-color: transparent;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  border: 6px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   position: relative;
   width: calc(50% - 30px);
@@ -113,7 +117,7 @@
   padding: 20px;
   box-sizing: border-box;
   transition: bottom 0.4s ease;
-  border-top: 1px solid rgba(91, 212, 107, 0.3);
+  border-top: 1px solid rgba(16, 187, 39, 0.3);
 }
 
 .works-block:hover .works-info,
@@ -144,7 +148,7 @@
   margin-top: 15px;
   background-color: rgb(213, 221, 107);
   font-family: "Poppins", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   font-style: normal;
   text-align: left;
@@ -187,6 +191,18 @@
 // Make sure the block being hovered appears on top
 .works-container:hover .works-block-web:hover {
   z-index: 10;
+}
+
+// ADDED Effects to enter
+.text-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.text-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ---------------------------------------*/
