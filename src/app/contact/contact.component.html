@@ -12,23 +12,12 @@
       <!-- Form Container -->
       <div class="contact-form-container">
         <div class="container">
-          <form
-            action="https://formsubmit.co/emailpost.sendtome@gmail.com"
-            method="POST"
-          >
-            <!-- Optional FormSubmit settings -->
-            <input type="hidden" name="_subject" value="New Project Inquiry" />
-            <input type="hidden" name="_captcha" value="false" />
-
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
             <div class="row">
-              <div class="col-25">
-                <label for="fullname"></label>
-              </div>
               <div class="col-75">
                 <input
                   type="text"
-                  id="fullname"
-                  name="name"
+                  formControlName="name"
                   placeholder="Your full name"
                   required
                 />
@@ -36,14 +25,10 @@
             </div>
 
             <div class="row">
-              <div class="col-25">
-                <label for="email"></label>
-              </div>
               <div class="col-75">
                 <input
                   type="email"
-                  id="email"
-                  name="email"
+                  formControlName="email"
                   placeholder="Your email"
                   required
                 />
@@ -51,14 +36,10 @@
             </div>
 
             <div class="row">
-              <div class="col-25">
-                <label for="subject"></label>
-              </div>
               <div class="col-75">
                 <input
                   type="text"
-                  id="subject"
-                  name="subject"
+                  formControlName="subject"
                   placeholder="Subject"
                   required
                 />
@@ -66,23 +47,26 @@
             </div>
 
             <div class="row">
-              <div class="col-25">
-                <label for="details"></label>
-              </div>
               <div class="col-75">
                 <textarea
-                  id="details"
-                  name="message"
-                  placeholder="Describe your project details here. . ."
+                  formControlName="message"
+                  placeholder="Describe your project details here..."
                   style="height: 200px"
                   required
                 ></textarea>
               </div>
             </div>
-            <br />
+
             <div class="row">
-              <input type="submit" value="Send inquiry" />
+              <button
+                type="submit"
+                [disabled]="contactForm.invalid || isSubmitting"
+              >
+                {{ isSubmitting ? "Sending..." : "Send inquiry" }}
+              </button>
             </div>
+
+            <p *ngIf="isSent">✅ Your email has been sent successfully!</p>
           </form>
         </div>
       </div>

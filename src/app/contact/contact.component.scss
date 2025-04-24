@@ -5,17 +5,17 @@
   align-items: center;
   min-height: 100vh;
   padding: 80px 20px;
+  background-color: #142820;
 }
 
-// CONTACT
 .contact-content {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   max-width: 1200px;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 40px;
-  background-color: transparent;
 }
 
 .contact-image-container {
@@ -36,72 +36,20 @@
   width: 100%;
   background-color: rgba(12, 20, 14, 0.7);
   border-radius: 20px;
-  padding: 0 20px 20px;
-}
-
-input[type="text"],
-input[type="email"],
-select,
-textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #092603;
-  border-radius: 12px;
-  background-color: #0e0f0d;
-  resize: vertical;
-  color: #e0e0e0;
-  font-family: "Poppins", sans-serif;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-  color: #e0e0e0; /* Change text color to white on focus */
-}
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-::placeholder {
-  color: rgba(211, 235, 215, 0.4);
-  font-weight: 300;
-  font-size: medium;
-}
-
-input[type="submit"] {
-  background-color: #d5dd6b;
-  color: #171d18;
-  width: 100%;
-  padding: 12px 50px;
-  border: 2px solid #171d18;
-  box-shadow: 0 20px 10px rgba(213, 213, 10, 0.1);
-  border-radius: 20px;
-  cursor: pointer;
-
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: large;
-}
-
-input[type="submit"]:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-  color: #ffffff;
-  border: 1px solid #04360b;
-  box-shadow: 0 20px 10px rgba(213, 213, 10, 0.1);
-  background-color: darken($color: #3f7119, $amount: 0);
+  padding: 20px;
 }
 
 .container {
   border-radius: 30px;
-  background-color: transparent; //#424242
+  background-color: transparent;
   padding: 10px;
 }
 
+.row {
+  margin-bottom: 10px;
+}
+
 .col-75 {
-  float: left;
   width: 100%;
 }
 
@@ -111,9 +59,74 @@ input[type="submit"]:hover {
   box-shadow: 0 2px 25px rgba(213, 221, 107, 0.2);
 }
 
-/* Clear floats after the columns */
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
+/* Inputs */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #092603;
+  border-radius: 12px;
+  background-color: #0e0f0d;
+  resize: vertical;
+  color: #e0e0e0;
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+/* ✅ Border turns white on focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  //outline: none;
+  color: #ffffff;
+}
+
+/* Placeholder style */
+::placeholder {
+  color: rgba(211, 235, 215, 0.4);
+  font-weight: 300;
+  font-size: medium;
+}
+
+/* Button styles */
+button[type="submit"] {
+  background-color: #d5dd6b;
+  color: #171d18;
+  width: 100%;
+  padding: 12px 50px;
+  border: 2px solid #171d18;
+  box-shadow: 0 20px 10px rgba(213, 213, 10, 0.1);
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: large;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover state */
+button[type="submit"]:hover:enabled {
+  transform: scale(1.05);
+  color: #ffffff;
+  border: 1px solid #04360b;
+  background-color: #3f7119;
+}
+
+/* Disabled state */
+button[disabled] {
+  background-color: #555c44;
+  color: #a6ac95;
+  border: 2px solid #3b3f2e;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Success message */
+p {
+  color: #b8ffb5;
+  margin-top: 10px;
+  font-weight: 500;
 }
