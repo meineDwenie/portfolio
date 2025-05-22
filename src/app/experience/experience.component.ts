@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-experience',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExperienceComponent {
-
-}
+export class ExperienceComponent {}

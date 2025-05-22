@@ -16,6 +16,8 @@
 
 /* Container with scrolling */
 .skills-container {
+  position: relative;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
@@ -27,6 +29,26 @@
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #4caf50 #142820;
+}
+
+.skills-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* So it doesn’t block clicks or scroll */
+
+  border-radius: 20px;
+  border: 2px solid rgba(236, 236, 236, 0.861);
+}
+
+.skills-container:hover .skills-bg-image {
+  opacity: 1;
 }
 
 /* Custom scrollbar for webkit browsers */
@@ -105,9 +127,9 @@
 
 /* Style for back side */
 .skills-card-back {
-  background-color: #3a463b;
+  background-color: rgba(94, 94, 94, 0.1);
   color: white;
-  border: 1px solid #4a4a4a;
+  border: 1px solid #ffffff;
   transform: rotateY(180deg);
   padding: 20px;
 }
@@ -115,7 +137,7 @@
 .skills-card-back h5 {
   font-size: 1.2rem;
   margin-bottom: 15px;
-  color: #4caf50;
+  color: #ffffff;
 }
 
 /* Progress bar styling */
@@ -150,7 +172,7 @@
 
 // When hovering over the container, blur all cards
 .skills-container:hover .skills-card {
-  opacity: 0.3;
+  opacity: 0.8;
   filter: blur(1px);
 }
 

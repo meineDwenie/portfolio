@@ -17,12 +17,21 @@ export class HomeComponent {
         'Frontend Developer',
         'UX/ UI Designer',
         'Web Developer',
-        'Mobile App Developer',
+        'App Developer',
       ],
       typeSpeed: 60,
       backSpeed: 20,
       backDelay: 1200,
       loop: true,
+
+      preStringTyped: (index: number) => {
+        const prefixElement = document.querySelector('.prefix-text');
+        if (prefixElement) {
+          const currentString = options.strings[index];
+          prefixElement.textContent =
+            currentString === 'App Developer' ? "I'm an " : "I'm a ";
+        }
+      },
     };
 
     new Typed('.typed-text', options);

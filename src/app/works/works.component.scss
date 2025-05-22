@@ -44,6 +44,7 @@
   width: 100%;
   margin: 20px 0 60px 0;
   padding: 0 20px;
+  outline: none;
 }
 
 /* Mobile App Works Block */
@@ -116,8 +117,9 @@
   backdrop-filter: blur(2px);
   padding: 20px;
   box-sizing: border-box;
-  transition: bottom 0.4s ease;
+  transition: bottom 0.6s ease;
   border-top: 1px solid rgba(16, 187, 39, 0.3);
+  outline: none;
 }
 
 .works-block:hover .works-info,

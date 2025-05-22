@@ -56,7 +56,7 @@
 .col-75:hover {
   border: 1px solid #5bd46b;
   border-radius: 10px;
-  box-shadow: 0 2px 25px rgba(213, 221, 107, 0.2);
+  //box-shadow: 0 2px 25px rgba(213, 221, 107, 0.2);
 }
 
 /* Inputs */
@@ -74,7 +74,11 @@ textarea {
   transition: border-color 0.3s ease;
 }
 
-/* ✅ Border turns white on focus */
+textarea {
+  resize: none;
+}
+
+// Border turns white on focus
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
@@ -127,6 +131,7 @@ button[disabled] {
 /* Success message */
 p {
   color: #b8ffb5;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-bottom: 0;
   font-weight: 500;
 }
