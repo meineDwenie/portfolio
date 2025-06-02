@@ -24,33 +24,6 @@ section {
   position: relative;
 }
 
-.blob {
-  width: 700px;
-  height: 700px;
-  position: absolute;
-  top: -370px;
-  left: -300px;
-
-  background-image: radial-gradient(
-    closest-side,
-    rgb(72, 225, 103, 0.4),
-    #142820
-  );
-}
-
-.blob1 {
-  width: 700px;
-  height: 700px;
-  position: absolute;
-  top: -20px;
-  right: -500px;
-
-  background-image: radial-gradient(closest-side, rgb(72, 225, 103), #142820);
-
-  opacity: 0.124;
-  filter: blur(0);
-}
-
 .home-content div {
   display: flex;
   align-items: left;
@@ -185,10 +158,6 @@ h3 {
     padding: 8em 5%;
   }
 
-  #home .blob {
-    display: none; /* Hide the blob on smaller screens */
-  }
-
   .homeparent {
     flex-direction: column-reverse; /* Put image first, text second */
     gap: 3rem;
@@ -228,6 +197,10 @@ h3 {
   }
 
   #home .blob {
+    display: none; /* Hide the blob on smaller screens */
+  }
+
+  #home .blob1 {
     display: none; /* Hide the blob on smaller screens */
   }
 
