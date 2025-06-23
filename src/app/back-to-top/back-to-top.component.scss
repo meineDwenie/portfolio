@@ -1,0 +1,50 @@
+.back-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #e0ebb1;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 16px;
+  cursor: pointer;
+  opacity: 0.4;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top-btn i {
+  opacity: 1 !important;
+  color: black;
+}
+
+.back-to-top-btn:hover {
+  opacity: 1;
+  color: black;
+}
+
+/******************************************* 
+              RESPONSIVENESS
+******************************************/
+
+// LAPTOP
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .back-to-top-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+}
+
+/* MOBILE PHONES */
+@media screen and (max-width: 768px) {
+  .back-to-top-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+}

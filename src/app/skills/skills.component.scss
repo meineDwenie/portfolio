@@ -187,7 +187,22 @@
   z-index: 10;
 }
 
-/* Responsive design */
+/******************************************* 
+              RESPONSIVENESS
+******************************************/
+
+// LAPTOP
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .skills-parent {
+    padding: 3.5rem 8%;
+  }
+
+  .skills-parent h3 {
+    font-size: 32px;
+  }
+}
+
+// TABLET
 @media (max-width: 1200px) {
   .skills-card {
     width: calc(33.333% - 25px);

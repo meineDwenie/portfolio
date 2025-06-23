@@ -1,105 +1,80 @@
-<div>
-  <!-- WORKS -->
-  <section id="works">
-    <div class="works-parent" style="background-color: #142820">
-      <h3>EXPLORE MY <span>WORKS</span></h3>
+<!-- WORKS -->
+<section id="works" class="works-section">
+  <div class="works-wrapper">
+    <h3>EXPLORE MY <span>WORKS</span></h3>
 
-      <div>
-        <h4>Mobile Apps</h4>
+    <div class="work-panels">
+      <!-- LEFT PANEL-->
+      <div class="works-details">
+        <div class="work-counter">
+          0{{ currentIndex + 1 }} <span>/ 0{{ works.length }}</span>
+        </div>
 
-        <div class="works-container">
-          <!-- NAB CLUB -->
-          <div class="works-block">
-            <div class="works-img-container">
-              <img
-                src="assets/images/nabclub.png"
-                alt="NabCLub Sticker Store"
-              />
-            </div>
+        <!-- Group 1: Titles & Description -->
+        <div class="work-main">
+          <h4>{{ currentWork.category }}</h4>
+          <h5>{{ currentWork.title }}</h5>
+          <p class="description">{{ currentWork.description }}</p>
+        </div>
 
-            <div class="works-info">
-              <h5>Nab Club Sticker Store</h5>
-              <p>Java and JavaFX</p>
-              <a href="#" class="project-link">View Details</a>
-            </div>
+        <!-- Group 2: Tech and Divider and Buttons -->
+        <div class="tech-buttons">
+          <!-- Group 2.1: Tech and Divider -->
+          <div class="work-meta">
+            <p class="tech">{{ currentWork.tech }}</p>
+            <hr />
           </div>
 
-          <!-- SENECDATES -->
-          <div class="works-block">
-            <div class="works-img-container">
-              <img
-                src="assets/images/senecdates.png"
-                alt="SenecDates Dating App"
-              />
-            </div>
+          <!-- Group 2.2: Buttons -->
+          <div class="action-buttons">
+            <!-- View Button -->
+            <a
+              *ngIf="currentWork.link"
+              [href]="currentWork.link"
+              target="_blank"
+              class="btn btn-outline-light"
+            >
+              <i class="bi bi-box-arrow-up-right"></i> View
+            </a>
 
-            <div class="works-info">
-              <h5>Senecdates Dating App</h5>
-              <p>Unity and C#</p>
-              <a
-                href="https://play.google.com/apps/test/com.CascadeGroupsCor.senecDates/13"
-                target="_blank"
-                class="project-link"
-                >View Details</a
-              >
-            </div>
-          </div>
+            <!-- GitHub Button -->
+            <a
+              *ngIf="currentWork.github"
+              [href]="currentWork.github"
+              target="_blank"
+              class="btn btn-outline-light"
+            >
+              <i class="bi bi-github"></i> GitHub
+            </a>
 
-          <!-- SPRINTER -->
-          <div class="works-block">
-            <div class="works-img-container">
-              <img src="assets/images/sprinter.png" alt="Sprinter Mobile App" />
-            </div>
-
-            <div class="works-info">
-              <h5>Sprinter Reimagined</h5>
-              <p>Figma Design</p>
-              <a href="#" class="project-link">View Details</a>
-            </div>
+            <!-- Figma Button -->
+            <a
+              *ngIf="currentWork.figma"
+              [href]="currentWork.figma"
+              target="_blank"
+              class="btn btn-outline-light"
+            >
+              <i class="bi bi-easel"></i> Figma
+            </a>
           </div>
         </div>
       </div>
 
-      <div>
-        <h4>Websites</h4>
+      <!-- RIGHT PANEL -->
+      <div class="works-image-container">
+        <div class="img-container">
+          <img
+            [src]="currentWork.image"
+            [alt]="currentWork.title"
+            class="work-img"
+          />
+        </div>
 
-        <div class="works-container">
-          <!-- SMOOTHIE -->
-          <div class="works-block-web">
-            <div class="works-img-container">
-              <img
-                src="assets/images/smoothie.png"
-                alt="Smoothie Online Menu"
-              />
-            </div>
-
-            <div class="works-info">
-              <h5>Smoothie Online Menu</h5>
-              <p>
-                A responsive website showcasing a premium smoothie shop's menu
-                with online ordering capabilities.
-              </p>
-              <a href="#" class="project-link">Visit Site</a>
-            </div>
-          </div>
-
-          <div class="works-block-web">
-            <div class="works-img-container">
-              <img src="assets/images/fruitapi.png" alt="Instagram" />
-            </div>
-
-            <!-- FRUITAPI -->
-            <div class="works-info">
-              <h5>Fruitapi Online Menu</h5>
-              <p>
-                An interactive web application that provides nutritional
-                information for various fruits through a clean API interface.
-              </p>
-              <a href="#" class="project-link">Visit Site</a>
-            </div>
-          </div>
+        <div class="nav-buttons">
+          <button (click)="prevWork()" class="btn btn-light"><</button>
+          <button (click)="nextWork()" class="btn btn-light">></button>
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>

@@ -39,20 +39,6 @@
   filter: blur(0);
 }
 
-.blob1 {
-  width: 700px;
-  height: 700px;
-  position: absolute;
-  top: -20px;
-  right: -500px;
-
-  background-image: radial-gradient(
-    closest-side,
-    rgb(72, 225, 103, 0.8),
-    #142820
-  );
-}
-
 /* Text animation from bottom to top */
 .text-reveal {
   opacity: 0;
@@ -97,6 +83,10 @@
 // FONTS
 .aboutchild p {
   text-align: left;
+}
+
+.aboutchild .about-text {
+  line-height: 1.7 !important;
 }
 
 /* Image and Animation Container */
@@ -183,7 +173,7 @@
   font-size: 50px;
   text-align: left;
   color: #5bd46b;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -324,7 +314,94 @@
   }
 }
 
-// RESPONSIVENESS
+/******************************************* 
+              RESPONSIVENESS
+******************************************/
+
+// LAPTOP
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .aboutparent {
+    padding: 5.5rem 8%;
+  }
+
+  .aboutchild {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .aboutchild h3 {
+    font-size: 30px;
+    margin-bottom: 22px;
+  }
+
+  .aboutchild h4 {
+    font-size: 22px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .aboutchild p {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 550px;
+    margin-bottom: 10px;
+  }
+
+  .experience-numbers {
+    gap: 30px;
+    margin-top: 10px;
+  }
+
+  .experience-block h3 {
+    font-size: 38px;
+    margin-bottom: 0;
+  }
+
+  .experience-block p {
+    font-size: 0.85rem;
+    max-width: 140px;
+  }
+
+  .image-container {
+    max-width: 340px;
+  }
+
+  .image-container img {
+    max-width: 23vw;
+  }
+
+  .downloadButton {
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+
+  .downloadButton .download-icon {
+    font-size: 20px;
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .social-icon img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .blob {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: -140px;
+    left: 190px;
+
+    background-image: radial-gradient(closest-side, rgb(72, 225, 103), #142820);
+    opacity: 0.3;
+    filter: blur(0);
+  }
+}
+
 @media (max-width: 1200px) {
   .aboutparent {
     flex-direction: column !important;
@@ -388,7 +465,15 @@
   }
 }
 
+// MOBILE PHONES
 @media (max-width: 768px) {
+  .aboutparent {
+    flex-direction: column;
+    padding-top: 4rem;
+    margin-top: 0;
+    height: auto;
+  }
+
   .experience-numbers {
     flex-direction: column;
     gap: 20px;

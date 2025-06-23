@@ -135,3 +135,18 @@ p {
   margin-bottom: 0;
   font-weight: 500;
 }
+
+/******************************************* 
+              RESPONSIVENESS
+******************************************/
+
+// LAPTOP
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .contact-parent {
+    padding: 5rem 8%;
+  }
+
+  .contact-parent h3 {
+    font-size: 32px;
+  }
+}

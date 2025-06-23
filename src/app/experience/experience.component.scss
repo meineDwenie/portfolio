@@ -34,3 +34,18 @@
   max-width: 400px;
   transition: transform 0.3s ease;
 }
+
+/******************************************* 
+              RESPONSIVENESS
+******************************************/
+
+// LAPTOP
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .experience-parent {
+    padding: 5rem 8%;
+  }
+
+  .experience-parent h3 {
+    font-size: 32px;
+  }
+}
