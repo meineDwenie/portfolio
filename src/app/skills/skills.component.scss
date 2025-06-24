@@ -347,12 +347,17 @@ p {
 /* MOBILE PHONES - 768px and below */
 @media screen and (max-width: 768px) {
   .skills-parent {
-    padding: 3rem 3%;
+    padding: 5rem 3%;
   }
 
   .skills-card {
     width: calc(50% - 12.5px); /* 2 per row */
     margin-bottom: 10px;
+  }
+
+  .skills-card-front img {
+    width: 45%;
+    height: 45%;
   }
 
   .skills-parent h3 {
@@ -372,5 +377,9 @@ p {
     font-size: 0.95rem;
     gap: 15px;
     padding: 0;
+  }
+
+  button {
+    display: none;
   }
 }

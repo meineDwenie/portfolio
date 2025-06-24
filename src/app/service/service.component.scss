@@ -197,7 +197,7 @@
 /* MOBILE PHONES (≤ 768px) */
 @media screen and (max-width: 768px) {
   .services-section {
-    padding: 3rem 1rem 2rem;
+    padding: 4.5rem 1rem 2rem;
 
     .background-text {
       font-size: 6rem;
@@ -206,52 +206,57 @@
     }
 
     .content-wrapper h3 {
-      font-size: 40px;
+      font-size: 32px;
+      padding: 0 40px;
+      margin-bottom: 8px;
     }
 
     .service-list {
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       flex-direction: row;
-      overflow-x: auto;
-      overflow-y: hidden;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      gap: 1rem;
-      padding: 0 0.5rem;
-      scroll-snap-type: x mandatory;
+      justify-content: space-between;
+      gap: 0 !important;
+      padding: 0;
+      margin: 0;
+
+      /* Remove scrolling styles */
+      overflow-x: unset;
+      overflow-y: unset;
+      scroll-snap-type: none;
     }
 
     .service-list::-webkit-scrollbar {
       display: none;
     }
+
     .service-list {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
 
     .service-card {
-      flex: 0 0 auto;
-      scroll-snap-align: start;
-      width: 80%;
-      max-width: 250px;
-      min-width: 220px;
+      flex: 0 0 calc(50% - 0.5rem); // 2 per row with gap
+      width: calc(50% - 0.5rem);
+      max-width: 100%;
       aspect-ratio: 1 / 1;
-      padding: 1.2rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      scroll-snap-align: none;
 
       i {
-        font-size: 1.8rem;
+        font-size: 1.5rem !important;
         margin: 0;
         padding: 0;
       }
 
       h5 {
-        font-size: 1rem;
+        font-size: 1rem !important;
         margin: 0;
         padding: 0;
       }
 
       p {
-        font-size: 0.85rem;
+        font-size: 0.85rem !important;
         margin: 0;
         padding: 0;
       }

@@ -17,7 +17,6 @@ export class HomeComponent {
         'Frontend Developer',
         'UX/ UI Designer',
         'Web Developer',
-        'Mobile App Developer',
       ],
       typeSpeed: 60,
       backSpeed: 20,

@@ -461,7 +461,8 @@
   .aboutparent {
     flex-direction: column;
     padding-top: 4rem;
-    margin-top: 0;
+    margin: 0;
+    margin-bottom: 0 !important;
   }
 
   .aboutchild {
@@ -471,8 +472,13 @@
     text-align: center;
   }
 
-  h3 {
+  .aboutchild h3 {
     margin: 0;
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 1.4rem;
   }
 
   .blob {
@@ -507,6 +513,7 @@
 
   .aboutchild p {
     padding: 0 20px;
+    font-size: 0.9rem;
   }
 
   /* Ensure all text is centered on mobile */
@@ -516,5 +523,11 @@
   .experience-block h3,
   .experience-block p {
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .aboutparent .aboutchild:first-child {
+    margin-bottom: 0;
   }
 }

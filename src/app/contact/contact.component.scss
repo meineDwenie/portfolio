@@ -271,7 +271,7 @@ p {
 /* MOBILE PHONES (≤ 768px) */
 @media screen and (max-width: 768px) {
   .contact-parent {
-    padding: 3rem 1.2rem;
+    padding: 5rem 1.8rem;
   }
 
   .contact-content {
@@ -287,10 +287,12 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50%;
+    width: 50%;
   }
 
   .contact-image-container img {
-    height: 400px;
+    height: 50%;
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
