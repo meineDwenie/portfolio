@@ -13,6 +13,7 @@ export class HeaderComponent {
   navItems = [
     { id: 'home', label: 'HOME' },
     { id: 'about', label: 'BIO' },
+    { id: 'service', label: 'SERVICES' },
     { id: 'works', label: 'WORKS' },
     { id: 'skills', label: 'SKILLS' },
     { id: 'experience', label: 'EXPERIENCE' },

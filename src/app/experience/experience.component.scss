@@ -1,38 +1,117 @@
+section {
+  background-color: #121a17;
+  padding: 3rem 2rem;
+}
+
 .experience-parent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 5rem 0;
-  min-height: 100vh;
-}
-
-// EXPERIENCE
-.exp-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  max-width: 1200px;
-  width: 100%;
-  padding: 0 20px;
-}
-
-.exp-block {
-  background-color: transparent;
-  color: #ffffff;
-  padding: 12px 24px;
-  border-radius: 20px;
-  border: 1px solid #ffffff;
+  background-color: #121a17 !important;
+  color: #fff;
+  padding: 5rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
 
-  width: calc(33.333% - 30px); /* Changed to 33.333% to fit 3 blocks per row */
-  max-width: 400px;
-  transition: transform 0.3s ease;
+  h3 {
+    font-size: 40px;
+    margin-bottom: 20px 0 20px;
+    span {
+      background: linear-gradient(270deg, #d5dd6b 10%, #408d4f 100%);
+      background-clip: text;
+      color: transparent;
+      font-weight: 700;
+      text-shadow: #171d18 0 10px 10px 10px;
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px;
+
+    .column {
+      background: transparent;
+      border-radius: 15px;
+      padding: 1.5rem;
+      flex: 1;
+
+      h4 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid #7ed957;
+        padding-bottom: 0.5rem;
+      }
+
+      .item {
+        display: flex;
+        margin-bottom: 1.2rem;
+        gap: 2rem;
+
+        .years {
+          flex: 0 0 90px;
+          font-weight: bold;
+          font-size: 1rem;
+
+          background: linear-gradient(270deg, #d5dd6b 10%, #408d4f 100%);
+          background-clip: text;
+          color: transparent;
+        }
+
+        .details {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+
+          .position,
+          .course {
+            font-weight: 600;
+            font-size: 1.1rem;
+          }
+
+          .company,
+          .school {
+            font-size: 0.9rem;
+            font-weight: 200;
+            opacity: 0.5;
+            margin-top: 0.2rem;
+          }
+        }
+      }
+    }
+
+    .image-column {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+
+      img {
+        max-width: 100%;
+        border-radius: 15px;
+        display: block;
+        position: relative;
+        z-index: 2;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%; // directly below the image
+        width: 70%;
+        height: 200px;
+        background: linear-gradient(
+          to bottom,
+          rgba(126, 217, 87, 0.5),
+          transparent
+        );
+        z-index: 1;
+        filter: blur(8px);
+        margin-top: -130px; // pulls it slightly up under the image
+      }
+    }
+  }
 }
 
 /******************************************* 
@@ -42,10 +121,102 @@
 // LAPTOP
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .experience-parent {
-    padding: 5rem 8%;
+    padding: 2.5rem 6%;
+  }
+
+  .container {
+    padding: 0;
+    margin: 0;
   }
 
   .experience-parent h3 {
-    font-size: 32px;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .column h4 {
+    font-size: 24px !important;
+    padding: 0;
+    margin: 2px;
+  }
+
+  .item .years {
+    font-size: 16px !important;
+  }
+
+  .details .position,
+  .course {
+    font-size: 16px !important;
+  }
+
+  .details .company,
+  .school {
+    font-size: 14px !important;
+  }
+}
+
+/* TABLETS */
+@media screen and (max-width: 992px) {
+  .experience-parent {
+    padding: 3.5rem 4%;
+
+    h3 {
+      font-size: 30px;
+    }
+
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .column {
+      width: 100%;
+      padding: 1rem 0;
+    }
+
+    .image-column {
+      order: -1;
+      margin-bottom: 2rem;
+
+      img {
+        max-width: 70%;
+      }
+    }
+
+    .item {
+      flex-direction: row;
+      gap: 1rem;
+
+      .years {
+        width: 70px;
+      }
+
+      .position,
+      .course {
+        font-size: 1rem;
+      }
+
+      .company,
+      .school {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+/* MOBILE PHONES */
+@media screen and (max-width: 768px) {
+  .experience-parent {
+    padding: 3rem 1.2rem;
+
+    .container {
+      gap: 0.1rem;
+    }
+
+    h3 {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
   }
 }

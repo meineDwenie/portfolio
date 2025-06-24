@@ -3,15 +3,41 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  //padding: 5rem 0;
+  padding: 5.5rem 0;
   min-height: 100vh;
 }
 
+// FONTS
 .skills-parent h3 {
-  margin: 20px 0 20px;
-  color: #ffffff;
-  font-size: 2.5rem;
+  font-family: "Poppins", sans-serif;
   text-align: center;
+  font-weight: 700;
+  font-size: 40px;
+  font-style: normal;
+  color: #f3f3f3;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+h4 {
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+  font-weight: 500;
+  font-size: 2rem;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  color: #f3f3f3;
+}
+
+p {
+  color: white;
+  font-size: 1rem;
+  font-weight: 200;
+  text-align: left;
+  opacity: 0.9;
+  padding: 0;
+  margin-top: 6px;
 }
 
 /* Container with scrolling */
@@ -51,6 +77,80 @@
   opacity: 1;
 }
 
+// Columns LEft and right
+.skills-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 2rem;
+}
+
+.skills-left {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  color: #ffffff;
+}
+
+.skills-left h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.skills-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.skills-buttons button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #2c382d;
+  color: rgba(211, 235, 215, 0.4);
+  font-weight: 400;
+  border-radius: 8px;
+  cursor: auto;
+  transition: 0.3s ease;
+}
+
+.skills-buttons button.active {
+  background-color: #d5dd6b;
+  color: #142820;
+  font-weight: bold;
+}
+
+/*
+.skills-buttons button:hover {
+  background-color: #2c382d;
+  color: rgba(211, 235, 215, 0.4);
+}
+  */
+
+.skills-right {
+  flex: 2;
+  min-width: 300px;
+}
+
+.soft-skills-list {
+  list-style: disc;
+  padding-left: 20px;
+  color: #dceede;
+  font-size: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 25px;
+  height: 70vh;
+  padding: 20px;
+}
+
 /* Custom scrollbar for webkit browsers */
 .skills-container::-webkit-scrollbar {
   width: 8px;
@@ -68,8 +168,10 @@
 
 /* Card styling */
 .skills-card {
-  width: calc(25% - 25px);
-  height: 250px;
+  //width: calc(25% - 25px);
+  width: calc(33.333% - 17px); // 3 per row with gap
+  //height: 250px;
+  aspect-ratio: 1 / 1;
   perspective: 1000px;
   margin-bottom: 20px;
 }
@@ -135,9 +237,10 @@
 }
 
 .skills-card-back h5 {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
+  font-size: 1rem;
+  margin-bottom: 2px;
   color: #ffffff;
+  padding-bottom: 12px;
 }
 
 /* Progress bar styling */
@@ -146,7 +249,7 @@
   height: 10px;
   background-color: #2a3c2e;
   border-radius: 10px;
-  margin: 15px 0;
+  margin: 10px 0;
   overflow: hidden;
 }
 
@@ -158,7 +261,7 @@
 }
 
 .percentage {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #ffffff;
 }
@@ -191,36 +294,83 @@
               RESPONSIVENESS
 ******************************************/
 
-// LAPTOP
+/* LAPTOP - 1024px to 1440px */
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .skills-parent {
-    padding: 3.5rem 8%;
+    padding: 4rem 6%;
+  }
+
+  .skills-card {
+    width: calc(33.333% - 17px); /* 3 per row */
+  }
+
+  .skills-card-front img {
+    width: 45%;
+    height: 45%;
   }
 
   .skills-parent h3 {
-    font-size: 32px;
+    font-size: 30px;
+    margin: 20px 0 0 0;
+  }
+
+  .skills-columns {
+    padding: 1rem;
+  }
+
+  .skills-columns p {
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 1.6;
+  }
+
+  .skills-left {
+    margin-top: 14px;
   }
 }
 
-// TABLET
-@media (max-width: 1200px) {
-  .skills-card {
-    width: calc(33.333% - 25px);
+/* TABLET - 769px to 1023px */
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .skills-parent {
+    padding: 3.5rem 4%;
   }
-}
 
-@media (max-width: 900px) {
   .skills-card {
-    width: calc(50% - 25px);
-  }
-}
-
-@media (max-width: 600px) {
-  .skills-card {
-    width: calc(100% - 25px);
+    width: calc(50% - 12.5px); /* 2 per row */
   }
 
   .skills-container {
-    height: 60vh;
+    height: 65vh;
+  }
+}
+
+/* MOBILE PHONES - 768px and below */
+@media screen and (max-width: 768px) {
+  .skills-parent {
+    padding: 3rem 3%;
+  }
+
+  .skills-card {
+    width: calc(50% - 12.5px); /* 2 per row */
+    margin-bottom: 10px;
+  }
+
+  .skills-parent h3 {
+    font-size: 28px;
+    margin-bottom: 0;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .soft-skills-list {
+    font-size: 0.95rem;
+    gap: 15px;
+    padding: 0;
   }
 }

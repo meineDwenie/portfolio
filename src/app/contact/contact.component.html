@@ -48,6 +48,24 @@
 
             <div class="row">
               <div class="col-75">
+                <select
+                  formControlName="service"
+                  [ngClass]="{
+                    'placeholder-shown':
+                      contactForm.get('service')?.value === ''
+                  }"
+                  required
+                >
+                  <option value="" disabled>Select a service</option>
+                  <option *ngFor="let service of services" [value]="service">
+                    {{ service }}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-75">
                 <textarea
                   formControlName="message"
                   placeholder="Describe your project details here..."

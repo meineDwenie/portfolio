@@ -1,0 +1,260 @@
+.services-section {
+  position: relative;
+  background-color: var(--bg-color);
+  padding: 5rem 2rem 3rem;
+  overflow: auto;
+  color: white;
+  scrollbar-color: #4caf50 #142820;
+
+  .background-text {
+    position: absolute;
+    bottom: 0%;
+    left: 30%;
+    font-size: 10rem;
+    font-weight: 900;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(69, 141, 71, 0.1); // outline effect
+  }
+
+  .content-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h3 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+
+      span {
+        background: linear-gradient(270deg, #d5dd6b 10%, #408d4f 100%);
+        background-clip: text;
+        color: transparent;
+        font-weight: 700;
+        text-shadow: #171d18 0 10px 10px 10px;
+      }
+    }
+
+    .service-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow-x: auto;
+      gap: 2rem;
+      padding: 10px;
+
+      .service-card {
+        flex: 0 0 auto;
+        border-radius: 15px;
+        padding: 1.5rem;
+        min-width: 250px;
+        max-width: 280px;
+        text-align: center;
+        transition: transform 0.3s ease;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        i {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+          background: linear-gradient(270deg, #d5dd6b 10%, #408d4f 100%);
+          background-clip: text;
+          color: transparent;
+          font-weight: 700;
+          text-shadow: #171d18 0 10px 10px 10px;
+        }
+
+        h5 {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          font-size: 0.95rem;
+          color: rgba(255, 255, 255, 0.8);
+        }
+
+        &:hover {
+          transform: translateY(-5px);
+          background-color: rgba(31, 47, 37, 0.4);
+          //box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+          outline: 1px solid white;
+        }
+      }
+    }
+  }
+}
+
+// Optional scrollbar hiding for a clean belt look
+.service-list::-webkit-scrollbar {
+  display: none;
+}
+.service-list {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/******************************************* 
+              RESPONSIVENESS
+******************************************/
+
+/* LAPTOP */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .services-section {
+    padding: 4.5rem 3rem 3rem;
+
+    .background-text {
+      font-size: 8rem;
+      left: 25%;
+    }
+
+    .content-wrapper h3 {
+      font-size: 2.2rem;
+      width: 100%;
+    }
+
+    .service-list {
+      justify-content: center;
+      gap: 0 !important;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .service-card {
+      min-width: 220px;
+      max-width: 240px;
+
+      i {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      h5 {
+        font-size: 1.1rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+/* TABLETS (≤ 992px) */
+@media screen and (max-width: 992px) {
+  .services-section {
+    padding: 4rem 1.5rem 2.5rem;
+
+    .background-text {
+      font-size: 7rem;
+      left: 20%;
+    }
+
+    .content-wrapper h3 {
+      font-size: 2rem;
+    }
+
+    .service-list {
+      gap: 1.5rem;
+      padding: 8px;
+    }
+
+    .service-card {
+      min-width: 220px;
+      max-width: 260px;
+
+      h5 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+/* MOBILE PHONES (≤ 768px) */
+@media screen and (max-width: 768px) {
+  .services-section {
+    padding: 3rem 1rem 2rem;
+
+    .background-text {
+      font-size: 6rem;
+      left: 6%;
+      bottom: 0%;
+    }
+
+    .content-wrapper h3 {
+      font-size: 40px;
+    }
+
+    .service-list {
+      flex-wrap: nowrap;
+      flex-direction: row;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 1rem;
+      padding: 0 0.5rem;
+      scroll-snap-type: x mandatory;
+    }
+
+    .service-list::-webkit-scrollbar {
+      display: none;
+    }
+    .service-list {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .service-card {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      width: 80%;
+      max-width: 250px;
+      min-width: 220px;
+      aspect-ratio: 1 / 1;
+      padding: 1.2rem;
+
+      i {
+        font-size: 1.8rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      h5 {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      p {
+        font-size: 0.85rem;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}

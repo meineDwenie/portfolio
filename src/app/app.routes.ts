@@ -29,6 +29,11 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'service',
+        loadComponent: () =>
+          import('./service/service.component').then((m) => m.ServiceComponent),
+      },
+      {
         path: 'skills',
         loadComponent: () =>
           import('./skills/skills.component').then((m) => m.SkillsComponent),

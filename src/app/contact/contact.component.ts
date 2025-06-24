@@ -19,8 +19,17 @@ export class ContactComponent {
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     subject: new FormControl('', [Validators.required]),
+    service: new FormControl('', [Validators.required]),
     message: new FormControl('', [Validators.required]),
   });
+
+  services: string[] = [
+    'Frontend Development',
+    'Website Application Development',
+    'Mobile App Development',
+    'UX / UI Designs',
+    'Graphic Designs',
+  ];
 
   isSubmitting = false;
   isSent = false;
@@ -48,6 +57,7 @@ export class ContactComponent {
     formData.append('name', this.contactForm.get('name')?.value || '');
     formData.append('email', this.contactForm.get('email')?.value || '');
     formData.append('subject', this.contactForm.get('subject')?.value || '');
+    formData.append('service', this.contactForm.get('service')?.value || '');
     formData.append('message', this.contactForm.get('message')?.value || '');
     formData.append('_subject', 'New Project Inquiry'); // Subject for FormSubmit
     formData.append('_captcha', 'false'); // Disable CAPTCHA

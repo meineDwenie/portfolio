@@ -7,9 +7,8 @@ body {
   padding: 0;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden; // Prevent horizontal scrolling
+  //overflow-x: hidden; // Prevent horizontal scrolling
   box-sizing: border-box; // Include padding and border in element's total width and height
-
   background: var(--bg-color);
   color: var(--text-color);
 }
@@ -21,8 +20,8 @@ body {
 
 // Stating variables
 :root {
-  --bg-color: #142820;
-  --second-bg-color: #171d18; // Footer
+  --bg-color: #1a2722;
+  --second-bg-color: #0f1310; // Footer
   --header-bg-color: #034d3a; // Header
   --highlight-color: #4caf50; // Highlight numbers
   --span-color: #408d4f; // Span
@@ -331,4 +330,13 @@ span {
   .works-container {
     grid-template-columns: 1fr;
   }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
