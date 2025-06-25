@@ -428,9 +428,9 @@ hr {
 
   .works-image-container {
     width: 100%;
-    height: 350px; /* Fixed height */
-    min-height: 350px;
-    max-height: 380px;
+    height: 340px; /* Fixed height */
+    min-height: 340px;
+    max-height: 360px;
     overflow: hidden;
     margin: 0;
     padding: 0;
@@ -442,9 +442,9 @@ hr {
 
   .img-container {
     width: 100%;
-    height: 250px; /* Fixed height */
-    min-height: 250px;
-    max-height: 280px;
+    height: 230px; /* Fixed height 250*/
+    min-height: 230px; // 250
+    max-height: 260px; //280
     overflow: hidden;
     padding: 0;
     margin: 0;
@@ -476,7 +476,7 @@ hr {
   .action-buttons {
     flex-direction: row;
     align-items: stretch;
-    width: calc(50% - 1rem); /* Full width minus some margin */
+    width: 100%; /* Full width minus some margin */
   }
 
   .action-buttons .btn {
