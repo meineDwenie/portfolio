@@ -433,6 +433,10 @@
     height: 350px;
   }
 
+  .blob {
+    display: none; /* Hide blob on mobile */
+  }
+
   /* Center experience numbers on tablet */
   .experience-numbers {
     justify-content: center;
