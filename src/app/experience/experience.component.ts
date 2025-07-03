@@ -24,7 +24,7 @@ interface EducationItem {
 export class ExperienceComponent {
   experience: ExperienceItem[] = [
     {
-      years: '2025 - Present',
+      years: '2025',
       position: 'Frontend Developer Trainee',
       company: 'NEORIS',
     },
@@ -53,7 +53,7 @@ export class ExperienceComponent {
       school: 'IES Alfonso X El Sabio, Murcia, Spain',
     },
     {
-      years: '2010-2014',
+      years: '2013-2017',
       course: 'Bachelor of Secondary Education Major in English',
       school: 'Cebu Normal University',
     },
