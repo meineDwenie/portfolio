@@ -37,7 +37,7 @@ export class WorksComponent {
       title: 'Instituthree Academy',
       description:
         'An educational web app featuring secure user registration and login, as well as advanced role and permission management for admins.',
-      tech: 'Angular, Angular Material, REST API, HTML, CSS, TypeScript, VS Code',
+      tech: 'Angular, Angular Material, REST API, NgRx, Reactive Forms, Components Development, HTML, CSS, TypeScript, VS Code',
       image: 'assets/images/instituthree.png',
       link: 'https://meinedwenie.github.io/instituthree/authentication',
       github: 'https://github.com/meineDwenie/instituthree',
