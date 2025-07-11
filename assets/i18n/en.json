@@ -1,0 +1,181 @@
+{
+  "HEADER": {
+    "NAV": {
+      "HOME": "HOME",
+      "BIO": "BIO",
+      "SERVICES": "SERVICES",
+      "WORKS": "WORKS",
+      "SKILLS": "SKILLS",
+      "EXPERIENCE": "EXPERIENCE"
+    },
+    "CONTACT_BUTTON": "Contact Me"
+  },
+
+  "HOME": {
+    "GREETING": "Hello, It's",
+    "NAME": "Edwin",
+    "PREFIX_TEXT_MALE": "I'm a ",
+    "PREFIX_TEXT_FEMALE": "I'm an ",
+    "TYPED_TEXTS": ["Frontend Developer", "UX/ UI Designer", "Web Developer"],
+    "DESCRIPTION": "I dedicate to craft marvelous, responsive, user-friendly applications that drive engagement and growth to your projects.",
+    "DOWNLOAD_CV": "Download CV"
+  },
+
+  "ABOUT": {
+    "TITLE_HTML": "ABOUT <span>ME</span>",
+    "QUOTE": "\"From chalkboard to keyboard\"",
+    "DESCRIPTION_HTML": "Formerly a licensed English teacher, now I am bringing my passion of creating <span>fresh ideas, strong communication skills</span>, and a deep focus on creating <span>user-friendly digital experience</span> into the tech-world. Skilled in leveraging technology to enhance learning and engagement, with a proven ability to adapt across cultures and a commitment to continuous growth and innovation.",
+    "EXPERIENCE": {
+      "YEARS": "2+",
+      "YEARS_TEXT": "Years of Experience in Development",
+      "PROJECTS": "10+",
+      "PROJECTS_TEXT": "Successful Projects Completed",
+      "COMMITS": "200",
+      "COMMITS_TEXT": "Code Commits"
+    }
+  },
+
+  "SERVICES": {
+    "TITLE_HTML": "AVAIL MY BEST <span>SERVICES</span>.",
+    "LIST": [
+      {
+        "TITLE": "Frontend Development",
+        "DESCRIPTION": "Creating responsive and interactive UI with modern frameworks."
+      },
+      {
+        "TITLE": "Website Application Development",
+        "DESCRIPTION": "Building full-featured websites with backend integration."
+      },
+      {
+        "TITLE": "Mobile App Development",
+        "DESCRIPTION": "Developing cross-platform apps with smooth performance."
+      },
+      {
+        "TITLE": "UX / UI Designs",
+        "DESCRIPTION": "Designing intuitive user interfaces and seamless experiences."
+      }
+    ]
+  },
+
+  "WORKS": {
+    "TITLE_HTML": "EXPLORE MY <span>WORKS</span>",
+    "VIEW": "View",
+    "GITHUB": "GitHub",
+    "FIGMA": "Figma",
+    "CATEGORY": {
+      "WEB_APP_FULL_STACK": "Web App - Full Stack",
+      "WEB_APP_FRONTEND": "Web App - Frontend",
+      "MOBILE_APP_FULL_STACK": "Mobile App - Full Stack",
+      "UI_UX_DESIGN": "UI / UX Design"
+    },
+    "TITLE": {
+      "TRADIE": "Tradie",
+      "INSTITUTHREE": "Instituthree Academy",
+      "SENECDATES": "SenecDates",
+      "NABCLUB": "NabClub",
+      "SPRINTER_REIMAGINED": "Sprinter Reimagined",
+      "FRUITAPI": "Fruitapi",
+      "SMOOTHIES": "Smoothies",
+      "EDWIN_PORTFOLIO": "Edwin. Portfolio"
+    },
+    "DESCRIPTION": {
+      "TRADIE": "A robust, responsive online shopping platform with product variety, admin dashboard, and full e-commerce functionality including payment integration.",
+      "INSTITUTHREE": "An educational web app featuring secure user registration and login, as well as advanced role and permission management for admins.",
+      "SENECDATES": "A dating mobile app specially designed for seniors 60+, featuring intuitive navigation and profile matching.",
+      "NABCLUB": "An innovative sticker store mobile app where customers can send images to be turned into personalized stickers.",
+      "SPRINTER_REIMAGINED": "A modernized mobile UI/UX design concept for a sports shoe e-commerce store.",
+      "FRUITAPI": "A refreshing and interactive UI design for a juice and fruit-based online shop.",
+      "SMOOTHIES": "Landing and menu design for a fun and vibrant smoothie shop. Includes interactive components and mobile-first layout.",
+      "EDWIN_PORTFOLIO": "A personal developer portfolio showcasing skills, technologies, and work history in a sleek, responsive layout."
+    },
+    "TECH": {
+      "TRADIE": "ASP.NET Core, MVC, C#, Visual Studio Code, Azure, PayPal, SQL Server Management Studio, HTML, CSS, JavaScript, Bootstrap, jQuery",
+      "INSTITUTHREE": "Angular, Angular Material, REST API, NgRx, Reactive Forms, Components Development, HTML, CSS, TypeScript, VS Code",
+      "SENECDATES": "Unity, C#, PlayerPrefs, Google Play",
+      "NABCLUB": "Java, JavaFX, Figma",
+      "SPRINTER_REIMAGINED": "Figma",
+      "FRUITAPI": "Figma",
+      "SMOOTHIES": "Figma",
+      "EDWIN_PORTFOLIO": "Angular, TypeScript, Bootstrap, HTML, CSS, VS Code"
+    }
+  },
+
+  "SKILLS": {
+    "DISCOVER_MY": "DISCOVER MY",
+    "SKILLS": "SKILLS",
+    "WHY_HIRE_ME": "Why hire me?",
+    "DESCRIPTION": "I'm a passionate & resilient developer with a proven ability to solve problems, adapt to new technologies, and work collaboratively — always driven by a hunger for continuous learning and growth.",
+    "HARD_SKILLS": "Hard Skills",
+    "SOFT_SKILLS": "Soft Skills"
+  },
+
+  "EXPERIENCE": {
+    "CHECK_MY": "CHECK MY",
+    "EXPERIENCE": "EXPERIENCE",
+    "EDUCATION": "EDUCATION",
+    "EXPERIENCE_HEADING": "Experience",
+    "EDUCATION_HEADING": "Education",
+    "YEARS": "Years",
+    "POSITIONS": {
+      "FRONTEND_DEVELOPER_TRAINEE": "Frontend Developer Trainee",
+      "ENGLISH_LANGUAGE_ASSISTANT": "English Language Assistant",
+      "ESL_TUTOR": "ESL Tutor",
+      "STUDENT_ASSISTANT": "Student Assistant"
+    },
+    "COMPANIES": {
+      "NEORIS": "NEORIS",
+      "SPANISH_MINISTRY_OF_EDUCATION": "Spanish Ministry of Education (Murcia Region)",
+      "QQ_ENGLISH": "QQ English Seafront Campus, Online-Offline English Teaching",
+      "CEBU_NORMAL_UNIVERSITY": "Cebu Normal University, Center for Testing, Evaluation and Development"
+    },
+    "COURSES": {
+      "MULTIPLATFORM_APPLICATION_DEVELOPMENT": "Multiplatform Application Development",
+      "BACHELOR_OF_SECONDARY_EDUCATION_MAJOR_IN_ENGLISH": "Bachelor of Secondary Education Major in English"
+    },
+    "SCHOOLS": {
+      "IES_ALFONSO_X_EL_SABIO": "IES Alfonso X El Sabio, Murcia, Spain",
+      "CEBU_NORMAL_UNIVERSITY": "Cebu Normal University"
+    }
+  },
+
+  "CONTACT": {
+    "HEADING": "Do you have any <span>project</span> in mind?",
+    "PLACEHOLDERS": {
+      "NAME": "Your full name",
+      "EMAIL": "Your email",
+      "SUBJECT": "Subject",
+      "SERVICE_SELECT": "Select a service",
+      "MESSAGE": "Describe your project details here..."
+    },
+    "SERVICES": {
+      "FRONTEND_DEVELOPMENT": "Frontend Development",
+      "WEBSITE_APPLICATION_DEVELOPMENT": "Website Application Development",
+      "MOBILE_APP_DEVELOPMENT": "Mobile App Development",
+      "UX_UI_DESIGNS": "UX / UI Designs",
+      "GRAPHIC_DESIGNS": "Graphic Designs"
+    },
+    "BUTTON": {
+      "SEND_INQUIRY": "Send inquiry",
+      "SENDING": "Sending..."
+    },
+    "SUCCESS_MESSAGE": "✅ Your email has been sent successfully!"
+  },
+
+  "FOOTER": {
+    "SUBTITLE": "Frontend Developer",
+    "DOWNLOAD_CV": "Download CV",
+    "NAVIGATION": {
+      "TITLE": "Navigation",
+      "HOME": "Home",
+      "BIO": "Bio",
+      "SERVICES": "Services",
+      "WORKS": "Works",
+      "SKILLS": "Skills",
+      "EXPERIENCE": "Experience"
+    },
+    "SOCIAL": {
+      "TITLE": "Social"
+    },
+    "COPYRIGHT": "Copyrights &copy; 2025 <span>Edwin</span> | All Rights Reserved"
+  }
+}

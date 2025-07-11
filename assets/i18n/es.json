@@ -1,0 +1,185 @@
+{
+  "HEADER": {
+    "NAV": {
+      "HOME": "INICIO",
+      "BIO": "BIOGRAFÍA",
+      "SERVICES": "SERVICIOS",
+      "WORKS": "PROYECTOS",
+      "SKILLS": "HABILIDADES",
+      "EXPERIENCE": "EXPERIENCIA"
+    },
+    "CONTACT_BUTTON": "Contáctame"
+  },
+
+  "HOME": {
+    "GREETING": "Hola, soy",
+    "NAME": "Edwin",
+    "PREFIX_TEXT_MALE": "Soy ",
+    "PREFIX_TEXT_FEMALE": "Soy una ",
+    "TYPED_TEXTS": [
+      "Desarrollador Frontend",
+      "Diseñador UX/UI",
+      "Desarrollador Web"
+    ],
+    "DESCRIPTION": "Me dedico a crear aplicaciones maravillosas, responsivas y fáciles de usar que impulsan el compromiso y crecimiento de tus proyectos.",
+    "DOWNLOAD_CV": "Descargar CV"
+  },
+
+  "ABOUT": {
+    "TITLE_HTML": "SOBRE <span>MÍ</span>",
+    "QUOTE": "\"De la pizarra al teclado\"",
+    "DESCRIPTION_HTML": "Anteriormente profesor de inglés licenciado, ahora traigo mi pasión por crear <span>ideas frescas, fuertes habilidades de comunicación</span> y un enfoque profundo en crear una <span>experiencia digital amigable para el usuario</span> al mundo tecnológico. Capacitado para aprovechar la tecnología para mejorar el aprendizaje y la participación, con una habilidad probada para adaptarme a diferentes culturas y un compromiso con el crecimiento y la innovación continua.",
+    "EXPERIENCE": {
+      "YEARS": "2+",
+      "YEARS_TEXT": "Años de experiencia en desarrollo",
+      "PROJECTS": "10+",
+      "PROJECTS_TEXT": "Proyectos exitosos completados",
+      "COMMITS": "200",
+      "COMMITS_TEXT": "Commits de código"
+    }
+  },
+
+  "SERVICES": {
+    "TITLE_HTML": "APROVECHA MIS MEJORES <span>SERVICIOS</span>.",
+    "LIST": [
+      {
+        "TITLE": "Desarrollo Frontend",
+        "DESCRIPTION": "Creación de interfaces responsivas e interactivas con frameworks modernos."
+      },
+      {
+        "TITLE": "Desarrollo de Aplicaciones Web",
+        "DESCRIPTION": "Construcción de sitios web completos con integración backend."
+      },
+      {
+        "TITLE": "Desarrollo de Aplicaciones Móviles",
+        "DESCRIPTION": "Desarrollo de apps multiplataforma con rendimiento fluido."
+      },
+      {
+        "TITLE": "Diseño UX / UI",
+        "DESCRIPTION": "Diseño de interfaces intuitivas y experiencias sin fricción."
+      }
+    ]
+  },
+
+  "WORKS": {
+    "TITLE_HTML": "EXPLORA MIS <span>PROYECTOS</span>",
+    "VIEW": "Ver",
+    "GITHUB": "GitHub",
+    "FIGMA": "Figma",
+    "CATEGORY": {
+      "WEB_APP_FULL_STACK": "Aplicación Web - Full Stack",
+      "WEB_APP_FRONTEND": "Aplicación Web - Frontend",
+      "MOBILE_APP_FULL_STACK": "Aplicación Móvil - Full Stack",
+      "UI_UX_DESIGN": "Diseño UI / UX"
+    },
+    "TITLE": {
+      "TRADIE": "Tradie",
+      "INSTITUTHREE": "Instituthree Academy",
+      "SENECDATES": "SenecDates",
+      "NABCLUB": "NabClub",
+      "SPRINTER_REIMAGINED": "Sprinter Reimaginado",
+      "FRUITAPI": "Fruitapi",
+      "SMOOTHIES": "Smoothies",
+      "EDWIN_PORTFOLIO": "Edwin. Portafolio"
+    },
+    "DESCRIPTION": {
+      "TRADIE": "Una plataforma de compras en línea robusta y adaptable, con variedad de productos, panel de administración y funcionalidad completa de comercio electrónico con integración de pagos.",
+      "INSTITUTHREE": "Aplicación educativa con registro y acceso seguros, junto con una gestión avanzada de roles y permisos para administradores.",
+      "SENECDATES": "Una app de citas diseñada especialmente para personas mayores de 60 años, con navegación intuitiva y emparejamiento de perfiles.",
+      "NABCLUB": "App móvil innovadora para tienda de pegatinas, donde los clientes pueden enviar imágenes para convertirlas en pegatinas personalizadas.",
+      "SPRINTER_REIMAGINED": "Concepto moderno de diseño UI/UX para una tienda de calzado deportivo en línea.",
+      "FRUITAPI": "Diseño de interfaz atractivo e interactivo para una tienda de jugos y frutas en línea.",
+      "SMOOTHIES": "Diseño de landing page y menú para una divertida tienda de batidos, con componentes interactivos y enfoque móvil.",
+      "EDWIN_PORTFOLIO": "Portafolio personal de desarrollador que muestra habilidades, tecnologías y experiencia laboral en un diseño elegante y adaptable."
+    },
+    "TECH": {
+      "TRADIE": "ASP.NET Core, MVC, C#, Visual Studio Code, Azure, PayPal, SQL Server Management Studio, HTML, CSS, JavaScript, Bootstrap, jQuery",
+      "INSTITUTHREE": "Angular, Angular Material, REST API, NgRx, Formularios Reactivos, Desarrollo de Componentes, HTML, CSS, TypeScript, VS Code",
+      "SENECDATES": "Unity, C#, PlayerPrefs, Google Play",
+      "NABCLUB": "Java, JavaFX, Figma",
+      "SPRINTER_REIMAGINED": "Figma",
+      "FRUITAPI": "Figma",
+      "SMOOTHIES": "Figma",
+      "EDWIN_PORTFOLIO": "Angular, TypeScript, Bootstrap, HTML, CSS, VS Code"
+    }
+  },
+
+  "SKILLS": {
+    "DISCOVER_MY": "DESCUBRE MIS",
+    "SKILLS": "HABILIDADES",
+    "WHY_HIRE_ME": "¿Por qué contratarme?",
+    "DESCRIPTION": "Soy un desarrollador apasionado y resiliente con capacidad comprobada para resolver problemas, adaptarme a nuevas tecnologías y trabajar colaborativamente — siempre impulsado por el hambre de aprendizaje y crecimiento continuo.",
+    "HARD_SKILLS": "Habilidades Técnicas",
+    "SOFT_SKILLS": "Habilidades Blandas"
+  },
+
+  "EXPERIENCE": {
+    "CHECK_MY": "REVISA MI",
+    "EXPERIENCE": "EXPERIENCIA",
+    "EDUCATION": "EDUCACIÓN",
+    "EXPERIENCE_HEADING": "Experiencia",
+    "EDUCATION_HEADING": "Educación",
+    "YEARS": "Años",
+    "POSITIONS": {
+      "FRONTEND_DEVELOPER_TRAINEE": "Desarrollador Frontend en Prácticas",
+      "ENGLISH_LANGUAGE_ASSISTANT": "Asistente de Inglés",
+      "ESL_TUTOR": "Tutor de ESL",
+      "STUDENT_ASSISTANT": "Asistente Estudiantil"
+    },
+    "COMPANIES": {
+      "NEORIS": "NEORIS",
+      "SPANISH_MINISTRY_OF_EDUCATION": "Ministerio de Educación de España (Región Murcia)",
+      "QQ_ENGLISH": "QQ English Campus Seafront, Enseñanza de Inglés Online-Offline",
+      "CEBU_NORMAL_UNIVERSITY": "Universidad Normal de Cebú, Centro de Evaluación y Desarrollo"
+    },
+    "COURSES": {
+      "MULTIPLATFORM_APPLICATION_DEVELOPMENT": "Desarrollo de Aplicaciones Multiplataforma",
+      "BACHELOR_OF_SECONDARY_EDUCATION_MAJOR_IN_ENGLISH": "Licenciatura en Educación Secundaria con especialidad en Inglés"
+    },
+    "SCHOOLS": {
+      "IES_ALFONSO_X_EL_SABIO": "IES Alfonso X El Sabio, Murcia, España",
+      "CEBU_NORMAL_UNIVERSITY": "Universidad Normal de Cebú"
+    }
+  },
+
+  "CONTACT": {
+    "HEADING": "¿Tienes algún <span>proyecto</span> en mente?",
+    "PLACEHOLDERS": {
+      "NAME": "Tu nombre completo",
+      "EMAIL": "Tu correo electrónico",
+      "SUBJECT": "Asunto",
+      "SERVICE_SELECT": "Selecciona un servicio",
+      "MESSAGE": "Describe los detalles de tu proyecto aquí..."
+    },
+    "SERVICES": {
+      "FRONTEND_DEVELOPMENT": "Desarrollo Frontend",
+      "WEBSITE_APPLICATION_DEVELOPMENT": "Desarrollo de Aplicaciones Web",
+      "MOBILE_APP_DEVELOPMENT": "Desarrollo de Apps Móviles",
+      "UX_UI_DESIGNS": "Diseño UX / UI",
+      "GRAPHIC_DESIGNS": "Diseño Gráfico"
+    },
+    "BUTTON": {
+      "SEND_INQUIRY": "Enviar consulta",
+      "SENDING": "Enviando..."
+    },
+    "SUCCESS_MESSAGE": "✅ ¡Tu correo ha sido enviado exitosamente!"
+  },
+
+  "FOOTER": {
+    "SUBTITLE": "Desarrollador Frontend",
+    "DOWNLOAD_CV": "Descargar CV",
+    "NAVIGATION": {
+      "TITLE": "Navegación",
+      "HOME": "Inicio",
+      "BIO": "Biografía",
+      "SERVICES": "Servicios",
+      "WORKS": "Proyectos",
+      "SKILLS": "Habilidades",
+      "EXPERIENCE": "Experiencia"
+    },
+    "SOCIAL": {
+      "TITLE": "Social"
+    },
+    "COPYRIGHT": "Derechos reservados &copy; 2025 <span>Edwin</span> | Todos los derechos reservados"
+  }
+}
