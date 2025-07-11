@@ -17,6 +17,7 @@
 
   <!-- Navigation container with links -->
   <div class="nav-container" [class.active]="isMenuActive">
+    <!-- Nav Links -->
     <nav>
       <a
         *ngFor="let item of navItems"
@@ -24,17 +25,30 @@
         (click)="handleNavClick(item.id)"
         class="{{ item.id }}-link"
       >
-        {{ item.label }}
+        {{ item.label | translate }}
       </a>
     </nav>
 
+    <!-- Language Dropdown -->
+    <div class="language-select">
+      <select
+        id="languageDropdown"
+        [value]="currentLang"
+        (change)="onLanguageChange($event)"
+      >
+        <option value="en">🇬🇧 English</option>
+        <option value="es">🇪🇸 Español</option>
+      </select>
+    </div>
+
+    <!-- Contact Me Button -->
     <div class="contact-button" *ngIf="showContactButton">
       <a
         href="javascript:void(0)"
         (click)="handleNavClick('contact')"
         class="contact-link"
       >
-        Contact Me
+        {{ "HEADER.CONTACT_BUTTON" | translate }}
       </a>
     </div>
   </div>

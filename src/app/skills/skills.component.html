@@ -1,27 +1,23 @@
 <section id="skills" class="skills-parent">
   <h3>
-    DISCOVER MY
+    {{ "SKILLS.DISCOVER_MY" | translate }}
     <!-- <span>{{ activeTab === "hard" ? "HARD" : "SOFT" }}</span> -->
-    <span>SKILLS</span>
+    <span>{{ "SKILLS.SKILLS" | translate }}</span>
   </h3>
 
   <div class="skills-columns">
     <!-- LEFT COLUMN -->
     <div class="skills-left">
-      <h4>Why hire me?</h4>
+      <h4>{{ "SKILLS.WHY_HIRE_ME" | translate }}</h4>
 
-      <p>
-        I'm a passionate & resilient developer with a proven ability to solve
-        problems, adapt to new technologies, and working collaboratively —
-        always driven by a hunger for continuous learning and growth.
-      </p>
+      <p>{{ "SKILLS.DESCRIPTION" | translate }}</p>
 
       <div class="skills-buttons">
         <button
           (click)="switchTab('hard')"
           [class.active]="activeTab === 'hard'"
         >
-          Hard Skills
+          {{ "SKILLS.HARD_SKILLS" | translate }}
         </button>
         <!-- <button
           (click)="switchTab('soft')"

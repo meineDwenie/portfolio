@@ -6,11 +6,12 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
@@ -23,12 +24,15 @@ export class ContactComponent {
     message: new FormControl('', [Validators.required]),
   });
 
-  services: string[] = [
-    'Frontend Development',
-    'Website Application Development',
-    'Mobile App Development',
-    'UX / UI Designs',
-    'Graphic Designs',
+  services = [
+    { key: 'FRONTEND_DEVELOPMENT', value: 'Frontend Development' },
+    {
+      key: 'WEBSITE_APPLICATION_DEVELOPMENT',
+      value: 'Website Application Development',
+    },
+    { key: 'MOBILE_APP_DEVELOPMENT', value: 'Mobile App Development' },
+    { key: 'UX_UI_DESIGNS', value: 'UX / UI Designs' },
+    { key: 'GRAPHIC_DESIGNS', value: 'Graphic Designs' },
   ];
 
   isSubmitting = false;

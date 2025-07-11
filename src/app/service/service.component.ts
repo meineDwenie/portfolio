@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface Service {
   icon: string;
@@ -7,37 +9,34 @@ interface Service {
   description: string;
 }
 
+interface ServiceTranslation {
+  TITLE: string;
+  DESCRIPTION: string;
+}
+
 @Component({
   selector: 'app-service',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './service.component.html',
-  styleUrl: './service.component.scss',
+  styleUrls: ['./service.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ServiceComponent {
-  services: Service[] = [
-    {
-      icon: 'bi-code-slash',
-      title: 'Frontend Development',
-      description:
-        'Creating responsive and interactive UI with modern frameworks.',
-    },
-    {
-      icon: 'bi-laptop',
-      title: 'Website Application Development',
-      description: 'Building full-featured websites with backend integration.',
-    },
-    {
-      icon: 'bi-phone',
-      title: 'Mobile App Development',
-      description: 'Developing cross-platform apps with smooth performance.',
-    },
-    {
-      icon: 'bi-palette',
-      title: 'UX / UI Designs',
-      description:
-        'Designing intuitive user interfaces and seamless experiences.',
-    },
-  ];
+  services: Service[] = [];
+
+  constructor(private translate: TranslateService) {
+    const icons = ['bi-code-slash', 'bi-laptop', 'bi-phone', 'bi-palette'];
+
+    this.translate.stream('SERVICES.LIST').subscribe((translated) => {
+      const services = translated as ServiceTranslation[];
+      this.services = services.map(
+        (service: ServiceTranslation, index: number) => ({
+          icon: icons[index] || 'bi-info-circle',
+          title: service.TITLE,
+          description: service.DESCRIPTION,
+        })
+      );
+    });
+  }
 }

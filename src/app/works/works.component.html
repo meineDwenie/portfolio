@@ -1,7 +1,7 @@
 <!-- WORKS -->
 <section id="works" class="works-section">
   <div class="works-wrapper">
-    <h3>EXPLORE MY <span>WORKS</span></h3>
+    <h3 [innerHTML]="'WORKS.TITLE_HTML' | translate"></h3>
 
     <div class="work-panels">
       <!-- LEFT PANEL-->
@@ -12,16 +12,18 @@
 
         <!-- Group 1: Titles & Description -->
         <div class="work-main">
-          <h4>{{ currentWork.category }}</h4>
-          <h5>{{ currentWork.title }}</h5>
-          <p class="description">{{ currentWork.description }}</p>
+          <h4>{{ currentWork.categoryKey | translate }}</h4>
+          <h5>{{ currentWork.titleKey | translate }}</h5>
+          <p class="description">
+            {{ currentWork.descriptionKey | translate }}
+          </p>
         </div>
 
         <!-- Group 2: Tech and Divider and Buttons -->
         <div class="tech-buttons">
           <!-- Group 2.1: Tech and Divider -->
           <div class="work-meta">
-            <p class="tech">{{ currentWork.tech }}</p>
+            <p class="tech">{{ currentWork.techKey | translate }}</p>
             <hr />
           </div>
 
@@ -34,7 +36,8 @@
               target="_blank"
               class="btn btn-outline-light"
             >
-              <i class="bi bi-box-arrow-up-right"></i> View
+              <i class="bi bi-box-arrow-up-right"></i>
+              {{ "WORKS.VIEW" | translate }}
             </a>
 
             <!-- GitHub Button -->
@@ -44,7 +47,7 @@
               target="_blank"
               class="btn btn-outline-light"
             >
-              <i class="bi bi-github"></i> GitHub
+              <i class="bi bi-github"></i> {{ "WORKS.GITHUB" | translate }}
             </a>
 
             <!-- Figma Button -->
@@ -54,7 +57,7 @@
               target="_blank"
               class="btn btn-outline-light"
             >
-              <i class="bi bi-easel"></i> Figma
+              <i class="bi bi-easel"></i> {{ "WORKS.FIGMA" | translate }}
             </a>
           </div>
         </div>

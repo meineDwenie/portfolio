@@ -1,28 +1,35 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   navItems = [
-    { id: 'home', label: 'HOME' },
-    { id: 'about', label: 'BIO' },
-    { id: 'service', label: 'SERVICES' },
-    { id: 'works', label: 'WORKS' },
-    { id: 'skills', label: 'SKILLS' },
-    { id: 'experience', label: 'EXPERIENCE' },
+    { id: 'home', label: 'HEADER.NAV.HOME' },
+    { id: 'about', label: 'HEADER.NAV.BIO' },
+    { id: 'service', label: 'HEADER.NAV.SERVICES' },
+    { id: 'works', label: 'HEADER.NAV.WORKS' },
+    { id: 'skills', label: 'HEADER.NAV.SKILLS' },
+    { id: 'experience', label: 'HEADER.NAV.EXPERIENCE' },
     //{ id: 'contact', label: 'CONTACT'},
   ];
 
   // Flag for showing/hiding certain elements (for demonstration)
   showContactButton = true;
   isMenuActive = false;
+  currentLang: string;
+
+  constructor(private translate: TranslateService) {
+    this.currentLang =
+      this.translate.currentLang || this.translate.getDefaultLang();
+  }
 
   toggleMenu() {
     this.isMenuActive = !this.isMenuActive;
@@ -34,10 +41,9 @@ export class HeaderComponent {
   }
 
   goToSection(sectionId: string): void {
-    // Ensure the use of ViewportScroller for Angular's recommended approach
     const element = document.getElementById(sectionId);
     if (element) {
-      // Use smooth scroll with a slight delay to ensure rendering
+      // Smooth scroll w/ a slight delay to ensure rendering
       setTimeout(() => {
         element.scrollIntoView({
           behavior: 'smooth',
@@ -45,5 +51,15 @@ export class HeaderComponent {
         });
       }, 0.5);
     }
+  }
+
+  switchLang(lang: string) {
+    this.translate.use(lang);
+    this.currentLang = lang;
+  }
+
+  onLanguageChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.switchLang(selectElement.value);
   }
 }

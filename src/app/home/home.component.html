@@ -1,56 +1,60 @@
 <section id="home">
   <div class="homeparent">
     <div class="home-content">
-      <h1>Hello, It's <span class="name">Edwin</span></h1>
+      <h1>
+        {{ "HOME.GREETING" | translate }}
+        <span class="name">{{ "HOME.NAME" | translate }}</span>
+      </h1>
       <h3>
         <span class="prefix-text">I'm a </span>
         <span class="typed-text"></span>
       </h3>
-      <p>
-        I dedicate to craft marvelous, responsive, user-friendly applications
-        that drive engagement and growth to your projects.
-      </p>
+      <p>{{ "HOME.DESCRIPTION" | translate }}</p>
 
       <!-- Download CV and Social Media -->
       <div class="download-social-container">
-        <div class="downloadButton" (click)="downloadCV()">
-          <span class="download-btn-span">Download CV</span>
-          <i class="bi bi-download download-icon"></i>
-        </div>
+        <div class="download-social-inner">
+          <div class="downloadButton" (click)="downloadCV()">
+            <span class="download-btn-span">{{
+              "HOME.DOWNLOAD_CV" | translate
+            }}</span>
+            <i class="bi bi-download download-icon"></i>
+          </div>
 
-        <div class="social-icons">
-          <a
-            href="https://www.linkedin.com/in/edwin-nu%C3%B1ez-lpt-0a2856126/"
-            target="_blank"
-            class="social-icon"
-          >
-            <img src="assets/images/linkedin_icon.png" alt="LinkedIn" />
-          </a>
+          <div class="social-icons">
+            <a
+              href="https://www.linkedin.com/in/edwin-nu%C3%B1ez-lpt-0a2856126/"
+              target="_blank"
+              class="social-icon"
+            >
+              <img src="assets/images/linkedin_icon.png" alt="LinkedIn" />
+            </a>
 
-          <a
-            href="https://meinedwenie.github.io/portfolio/"
-            target="_blank"
-            class="social-icon"
-          >
-            <img src="assets/images/github_icon.png" alt="GitHub" />
-          </a>
+            <a
+              href="https://meinedwenie.github.io/portfolio/"
+              target="_blank"
+              class="social-icon"
+            >
+              <img src="assets/images/github_icon.png" alt="GitHub" />
+            </a>
 
-          <a
-            href="https://uk.pinterest.com/meineDwenie/"
-            target="_blank"
-            class="social-icon"
-            class="social-icon"
-          >
-            <img src="assets/images/pinterest_icon.png" alt="Twitter" />
-          </a>
+            <a
+              href="https://uk.pinterest.com/meineDwenie/"
+              target="_blank"
+              class="social-icon"
+              class="social-icon"
+            >
+              <img src="assets/images/pinterest_icon.png" alt="Twitter" />
+            </a>
 
-          <a
-            href="https://www.instagram.com/emptysheetstories/"
-            target="_blank"
-            class="social-icon"
-          >
-            <img src="assets/images/instagram_icon.png" alt="Instagram" />
-          </a>
+            <a
+              href="https://www.instagram.com/emptysheetstories/"
+              target="_blank"
+              class="social-icon"
+            >
+              <img src="assets/images/instagram_icon.png" alt="Instagram" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

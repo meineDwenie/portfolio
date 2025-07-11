@@ -2,29 +2,33 @@
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="experience-parent" style="background-color: #142820">
-      <h3>CHECK MY <span>EXPERIENCE</span> & EDUCATION</h3>
+      <h3>
+        {{ "EXPERIENCE.CHECK_MY" | translate }}
+        <span>{{ "EXPERIENCE.EXPERIENCE" | translate }}</span>
+        &amp; {{ "EXPERIENCE.EDUCATION" | translate }}
+      </h3>
 
       <div class="container">
         <!-- Experience -->
         <div class="column experience-column">
-          <h4>Experience</h4>
+          <h4>{{ "EXPERIENCE.EXPERIENCE_HEADING" | translate }}</h4>
           <div *ngFor="let exp of experience" class="item">
             <div class="years">{{ exp.years }}</div>
             <div class="details">
-              <div class="position">{{ exp.position }}</div>
-              <div class="company">{{ exp.company }}</div>
+              <div class="position">{{ exp.position | translate }}</div>
+              <div class="company">{{ exp.company | translate }}</div>
             </div>
           </div>
         </div>
 
         <!-- Education -->
         <div class="column education-column">
-          <h4>Education</h4>
+          <h4>{{ "EXPERIENCE.EDUCATION_HEADING" | translate }}</h4>
           <div *ngFor="let edu of education" class="item">
             <div class="years">{{ edu.years }}</div>
             <div class="details">
-              <div class="course">{{ edu.course }}</div>
-              <div class="school">{{ edu.school }}</div>
+              <div class="course">{{ edu.course | translate }}</div>
+              <div class="school">{{ edu.school | translate }}</div>
             </div>
           </div>
         </div>

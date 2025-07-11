@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface ExperienceItem {
   years: string;
@@ -16,7 +17,7 @@ interface EducationItem {
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -25,37 +26,37 @@ export class ExperienceComponent {
   experience: ExperienceItem[] = [
     {
       years: '2025',
-      position: 'Frontend Developer Trainee',
-      company: 'NEORIS',
+      position: 'EXPERIENCE.POSITIONS.FRONTEND_DEVELOPER_TRAINEE',
+      company: 'EXPERIENCE.COMPANIES.NEORIS',
     },
     {
       years: '2019-2022',
-      position: 'English Language Assistant',
-      company: 'Spanish Ministry of Education (Murcia Region)',
+      position: 'EXPERIENCE.POSITIONS.ENGLISH_LANGUAGE_ASSISTANT',
+      company: 'EXPERIENCE.COMPANIES.SPANISH_MINISTRY_OF_EDUCATION',
     },
     {
       years: '2017-2019',
-      position: 'ESL Tutor',
-      company: 'QQ English Seafront Campus, Online-Offline English Teaching',
+      position: 'EXPERIENCE.POSITIONS.ESL_TUTOR',
+      company: 'EXPERIENCE.COMPANIES.QQ_ENGLISH',
     },
     {
       years: '2014-2018',
-      position: 'Student Assistant',
-      company:
-        'Cebu Normal University, Center for Testing, Evaluation and Development',
+      position: 'EXPERIENCE.POSITIONS.STUDENT_ASSISTANT',
+      company: 'EXPERIENCE.COMPANIES.CEBU_NORMAL_UNIVERSITY',
     },
   ];
 
   education: EducationItem[] = [
     {
       years: '2023-2025',
-      course: 'Multiplatform Application Development',
-      school: 'IES Alfonso X El Sabio, Murcia, Spain',
+      course: 'EXPERIENCE.COURSES.MULTIPLATFORM_APPLICATION_DEVELOPMENT',
+      school: 'EXPERIENCE.SCHOOLS.IES_ALFONSO_X_EL_SABIO',
     },
     {
       years: '2013-2017',
-      course: 'Bachelor of Secondary Education Major in English',
-      school: 'Cebu Normal University',
+      course:
+        'EXPERIENCE.COURSES.BACHELOR_OF_SECONDARY_EDUCATION_MAJOR_IN_ENGLISH',
+      school: 'EXPERIENCE.SCHOOLS.CEBU_NORMAL_UNIVERSITY',
     },
   ];
 }

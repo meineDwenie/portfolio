@@ -76,6 +76,7 @@ h3 {
 
 .prefix-text {
   color: #ffffff;
+  font-size: 44px;
 }
 
 .typed-text {
@@ -84,6 +85,7 @@ h3 {
   -webkit-background-clip: text;
   color: transparent; /* Makes the gradient visible */
   font-weight: 700;
+  font-size: 44px;
 }
 
 // IMAGE
@@ -284,8 +286,12 @@ h3 {
     font-size: 16px;
   }
 
+  .prefix-text {
+    font-size: 32px;
+  }
+
   .typed-text {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .desc {
@@ -329,6 +335,7 @@ h3 {
   .home-content {
     align-items: center;
     text-align: center;
+    justify-content: center;
     width: 100%;
   }
 
@@ -374,6 +381,10 @@ h3 {
     height: 240px;
   }
 
+  .home-content .download-social-container {
+    justify-content: center !important;
+  }
+
   .download-social-container {
     justify-content: center;
     align-items: center;
@@ -382,6 +393,13 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 30px;
+  }
+
+  .download-social-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
   }
 
   .downloadButton {
@@ -474,11 +492,23 @@ h3 {
     margin: 0;
   }
 
+  .home-content .download-social-container {
+    justify-content: center !important;
+  }
+
   .download-social-container {
     justify-content: center; /* change from flex-start */
     justify-self: center;
     align-items: center;
     text-align: center;
+  }
+
+  .download-social-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
   }
 }
 

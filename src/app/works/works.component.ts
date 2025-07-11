@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { AnimationService } from '../services/animation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-works',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './works.component.html',
   styleUrl: './works.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -149,7 +150,29 @@ export class WorksComponent {
   }
 
   get currentWork() {
-    return this.works[this.currentIndex];
+    const work = this.works[this.currentIndex];
+
+    const getKey = (prefix: string, value: string): string => {
+      const customTitleMap: Record<string, string> = {
+        'Instituthree Academy': 'INSTITUTHREE',
+        'Edwin. Portfolio': 'EDWIN_PORTFOLIO',
+        'Sprinter Reimagined': 'SPRINTER_REIMAGINED',
+      };
+
+      const keySuffix =
+        customTitleMap[value] ??
+        value.toUpperCase().replace(/[\s\.\-\/]+/g, '_');
+
+      return `WORKS.${prefix}.${keySuffix}`;
+    };
+
+    return {
+      ...work,
+      categoryKey: getKey('CATEGORY', work.category),
+      titleKey: getKey('TITLE', work.title),
+      descriptionKey: getKey('DESCRIPTION', work.title),
+      techKey: getKey('TECH', work.title),
+    };
   }
 
   nextWork() {

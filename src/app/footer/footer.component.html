@@ -11,7 +11,8 @@
           <h1>Ed<span>win.</span></h1>
         </a>
       </div>
-      <p class="subtitle">Frontend Developer</p>
+
+      <p class="footer_subtitle">{{ "FOOTER.SUBTITLE" | translate }}</p>
 
       <div class="contact-item">
         <i class="bi bi-telephone-fill"></i>
@@ -27,7 +28,7 @@
       </div>
 
       <div class="downloadButton" (click)="downloadCV()">
-        Download CV
+        {{ "FOOTER.DOWNLOAD_CV" | translate }}
         <i class="bi bi-download download-icon"></i>
       </div>
     </div>
@@ -35,26 +36,32 @@
     <!-- COLUMN 2: Navigation -->
     <div class="footer_column_2">
       <div class="footer_column_2_1">
-        <h4>Navigation</h4>
+        <h4>{{ "FOOTER.NAVIGATION.TITLE" | translate }}</h4>
         <nav class="footer_nav">
-          <a href="javascript:void(0)" (click)="goToSection('home')">Home</a>
-          <a href="javascript:void(0)" (click)="goToSection('about')">Bio</a>
-          <a href="javascript:void(0)" (click)="goToSection('service')"
-            >Services</a
-          >
-          <a href="javascript:void(0)" (click)="goToSection('works')">Works</a>
-          <a href="javascript:void(0)" (click)="goToSection('skills')"
-            >Skills</a
-          >
-          <a href="javascript:void(0)" (click)="goToSection('experience')"
-            >Experience</a
-          >
+          <a href="javascript:void(0)" (click)="goToSection('home')">{{
+            "FOOTER.NAVIGATION.HOME" | translate
+          }}</a>
+          <a href="javascript:void(0)" (click)="goToSection('about')">{{
+            "FOOTER.NAVIGATION.BIO" | translate
+          }}</a>
+          <a href="javascript:void(0)" (click)="goToSection('service')">{{
+            "FOOTER.NAVIGATION.SERVICES" | translate
+          }}</a>
+          <a href="javascript:void(0)" (click)="goToSection('works')">{{
+            "FOOTER.NAVIGATION.WORKS" | translate
+          }}</a>
+          <a href="javascript:void(0)" (click)="goToSection('skills')">{{
+            "FOOTER.NAVIGATION.SKILLS" | translate
+          }}</a>
+          <a href="javascript:void(0)" (click)="goToSection('experience')">{{
+            "FOOTER.NAVIGATION.EXPERIENCE" | translate
+          }}</a>
         </nav>
       </div>
 
       <!-- COLUMN 3: Social -->
       <div class="footer_column_2_1">
-        <h4>Social</h4>
+        <h4>{{ "FOOTER.SOCIAL.TITLE" | translate }}</h4>
         <div class="social-icons">
           <a
             href="https://www.linkedin.com/in/edwin-nu%C3%B1ez-lpt-0a2856126/"
@@ -86,6 +93,6 @@
   <hr class="footer-divider" />
 
   <div class="footer_down">
-    <p>Copyrights &copy; 2025 <span>Edwin</span> | All Rights Reserved</p>
+    <p [innerHTML]="'FOOTER.COPYRIGHT' | translate"></p>
   </div>
 </footer>

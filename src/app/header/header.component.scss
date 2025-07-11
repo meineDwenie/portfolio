@@ -162,14 +162,32 @@ nav a:hover {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
+.language-select {
+  select {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 12px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  option {
+    color: #000; // black text in dropdown list
   }
 }
 
+.language-select select option.flag-en {
+  background-image: url("https://flagcdn.com/gb.svg");
+}
+
+.language-select select option.flag-es {
+  background-image: url("https://flagcdn.com/es.svg");
+}
+
 /************************************** 
-        Mobile Responsiveness 
+       Responsiveness 
 ***************************************/
 
 /* LAPTOP SIZE  ( */
@@ -184,7 +202,7 @@ nav a:hover {
   }
 
   nav a {
-    margin: 0 24px;
+    margin: 0 14px;
     font-size: 15px;
     line-height: 1.5;
   }

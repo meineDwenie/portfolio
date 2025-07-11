@@ -1,7 +1,7 @@
 <!-- CONTACT  SECTION -->
 <section id="contact">
   <div class="contact-parent" style="background-color: #142820">
-    <h3>Do you have any <span>project</span> in mind?</h3>
+    <h3 [innerHTML]="'CONTACT.HEADING' | translate"></h3>
 
     <div class="contact-content">
       <!-- Image Container -->
@@ -18,7 +18,7 @@
                 <input
                   type="text"
                   formControlName="name"
-                  placeholder="Your full name"
+                  [placeholder]="'CONTACT.PLACEHOLDERS.NAME' | translate"
                   required
                 />
               </div>
@@ -29,7 +29,7 @@
                 <input
                   type="email"
                   formControlName="email"
-                  placeholder="Your email"
+                  [placeholder]="'CONTACT.PLACEHOLDERS.EMAIL' | translate"
                   required
                 />
               </div>
@@ -40,7 +40,7 @@
                 <input
                   type="text"
                   formControlName="subject"
-                  placeholder="Subject"
+                  [placeholder]="'CONTACT.PLACEHOLDERS.SUBJECT' | translate"
                   required
                 />
               </div>
@@ -56,9 +56,14 @@
                   }"
                   required
                 >
-                  <option value="" disabled>Select a service</option>
-                  <option *ngFor="let service of services" [value]="service">
-                    {{ service }}
+                  <option value="" disabled>
+                    {{ "CONTACT.PLACEHOLDERS.SERVICE_SELECT" | translate }}
+                  </option>
+                  <option
+                    *ngFor="let service of services"
+                    [value]="service.value"
+                  >
+                    {{ "CONTACT.SERVICES." + service.key | translate }}
                   </option>
                 </select>
               </div>
@@ -68,7 +73,7 @@
               <div class="col-75">
                 <textarea
                   formControlName="message"
-                  placeholder="Describe your project details here..."
+                  [placeholder]="'CONTACT.PLACEHOLDERS.MESSAGE' | translate"
                   style="height: 200px"
                   required
                 ></textarea>
@@ -80,11 +85,15 @@
                 type="submit"
                 [disabled]="contactForm.invalid || isSubmitting"
               >
-                {{ isSubmitting ? "Sending..." : "Send inquiry" }}
+                {{
+                  isSubmitting
+                    ? ("CONTACT.BUTTON.SENDING" | translate)
+                    : ("CONTACT.BUTTON.SEND_INQUIRY" | translate)
+                }}
               </button>
             </div>
 
-            <p *ngIf="isSent">✅ Your email has been sent successfully!</p>
+            <p *ngIf="isSent">{{ "CONTACT.SUCCESS_MESSAGE" | translate }}</p>
           </form>
         </div>
       </div>

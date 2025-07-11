@@ -3,6 +3,7 @@ import { provideRouter } from '@angular/router';
 import { withInMemoryScrolling } from '@angular/router';
 import { routes } from './app.routes';
 import { AnimationService } from './services/animation.service';
+import { provideTranslateLoader } from './services/translate.loader';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,5 +16,6 @@ export const appConfig: ApplicationConfig = {
         anchorScrolling: 'enabled',
       })
     ),
+    provideTranslateLoader(),
   ],
 };

@@ -50,7 +50,7 @@
   gap: 20rem;
 }
 
-.subtitle {
+.footer_subtitle {
   color: #9bb49b;
   font-size: 0.95rem;
   margin: -20px 0 0 0;
@@ -227,8 +227,9 @@ nav a:hover {
   color: #e7e7e7;
   transform: scale(1.2);
   //color: #d5dd6b;
-  border-bottom: 1px solid #d5dd6b;
+  //border-bottom: 1px solid #d5dd6b;
   resize: none;
+  transition: transform 0.3s ease;
 }
 
 // DOWNLOAD BUTTON

@@ -17,32 +17,28 @@
 
       <!-- RIGHT SIDE-->
       <div class="aboutchild">
-        <h3>ABOUT <span>ME</span></h3>
-        <h4>"From chalkboard to keyboard"</h4>
-        <p class="about-text">
-          Formerly a licensed English teacher, now I am bringing my passion of
-          creating <span>fresh ideas, strong communication skills</span>, and a
-          deep focus on creating <span>user-friendly digital experience</span>
-          into the tech-world. Skilled in leveraging technology to enhance
-          learning and engagement, with a proven ability to adapt across
-          cultures and a commitment to continuous growth and innovation.
-        </p>
+        <h3 [innerHTML]="'ABOUT.TITLE_HTML' | translate"></h3>
+        <h4>{{ "ABOUT.QUOTE" | translate }}</h4>
+        <p
+          class="about-text"
+          [innerHTML]="'ABOUT.DESCRIPTION_HTML' | translate"
+        ></p>
 
         <!-- Experience Number -->
         <div class="experience-numbers">
           <div class="experience-block">
-            <h3>2+</h3>
-            <p>Years of Experience in Development</p>
+            <h3>{{ "ABOUT.EXPERIENCE.YEARS" | translate }}</h3>
+            <p>{{ "ABOUT.EXPERIENCE.YEARS_TEXT" | translate }}</p>
           </div>
 
           <div class="experience-block">
-            <h3>10+</h3>
-            <p>Successful Projects Completed</p>
+            <h3>{{ "ABOUT.EXPERIENCE.PROJECTS" | translate }}</h3>
+            <p>{{ "ABOUT.EXPERIENCE.PROJECTS_TEXT" | translate }}</p>
           </div>
 
           <div class="experience-block">
-            <h3>200</h3>
-            <p>Code <br />Commits</p>
+            <h3>{{ "ABOUT.EXPERIENCE.COMMITS" | translate }}</h3>
+            <p>{{ "ABOUT.EXPERIENCE.COMMITS_TEXT" | translate }}</p>
           </div>
         </div>
       </div>

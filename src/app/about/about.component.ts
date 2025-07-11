@@ -1,14 +1,17 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { AnimationService } from '../services/animation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
   standalone: true,
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
+  imports: [CommonModule, TranslateModule],
 })
 export class AboutComponent implements AfterViewInit, OnDestroy {
   private routerSubscription: Subscription | null = null;
