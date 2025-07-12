@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
@@ -10,11 +10,13 @@ import { TranslateModule } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
+  constructor(private translate: TranslateService) {}
+
   goToSection(sectionId: string): void {
-    // Ensure the use of ViewportScroller for Angular's recommended approach
+    // ViewportScroller for Angular's recommended approach
     const element = document.getElementById(sectionId);
     if (element) {
-      // Use smooth scroll with a slight delay to ensure rendering
+      // Smooth scroll with a slight delay to ensure rendering
       setTimeout(() => {
         element.scrollIntoView({
           behavior: 'smooth',
@@ -25,12 +27,20 @@ export class FooterComponent {
   }
 
   downloadCV(): void {
+    const lang = this.translate.currentLang;
     const link = document.createElement('a');
     link.setAttribute('target', '_blank');
-    link.setAttribute('href', 'assets/files/CV_Edwin_Nunez.pdf');
-    link.setAttribute('download', 'CV_Edwin_Nunez.pdf');
+
+    if (lang === 'es') {
+      link.setAttribute('href', 'assets/files/CV_Edwin_Spanish.pdf');
+      link.setAttribute('download', 'CV_Edwin_Spanish.pdf');
+    } else {
+      link.setAttribute('href', 'assets/files/CV_Edwin_Nunez.pdf');
+      link.setAttribute('download', 'CV_Edwin_Nunez.pdf');
+    }
+
     document.body.appendChild(link);
     link.click();
-    document.body.appendChild(link);
+    document.body.removeChild(link);
   }
 }
