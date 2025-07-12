@@ -137,7 +137,14 @@ hr {
   height: 100%;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(189, 232, 16, 0.3);
+
+  &:hover {
+    box-shadow: 0 0 25px rgba(201, 237, 57, 0.3),
+      0 0 50px rgba(213, 228, 84, 0.3), 0 0 100px rgba(213, 228, 84, 0.3);
+    transition: 0.4s ease-in;
+  }
 }
 
 .work-img {

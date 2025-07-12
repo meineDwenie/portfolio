@@ -19,7 +19,7 @@ export class ContactComponent {
   contactForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    subject: new FormControl('', [Validators.required]),
+    subject: new FormControl(''),
     service: new FormControl('', [Validators.required]),
     message: new FormControl('', [Validators.required]),
   });
@@ -33,6 +33,7 @@ export class ContactComponent {
     { key: 'MOBILE_APP_DEVELOPMENT', value: 'Mobile App Development' },
     { key: 'UX_UI_DESIGNS', value: 'UX / UI Designs' },
     { key: 'GRAPHIC_DESIGNS', value: 'Graphic Designs' },
+    { key: 'OTHER', value: 'Other' },
   ];
 
   isSubmitting = false;

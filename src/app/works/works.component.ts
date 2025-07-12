@@ -108,7 +108,7 @@ export class WorksComponent {
       title: 'Edwin. Portfolio',
       description:
         'A personal developer portfolio showcasing skills, technologies, and work history in a sleek, responsive layout.',
-      tech: 'Angular, TypeScript, Bootstrap, HTML, CSS, VS Code',
+      tech: 'Angular, TypeScript, ng-translate, NgRx, Bootstrap, HTML, CSS, VS Code',
       image: 'assets/images/portfolio.png',
       link: 'https://meinedwenie.github.io/portfolio/',
       github: 'https://github.com/meineDwenie/portfolio',

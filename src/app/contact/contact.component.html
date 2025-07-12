@@ -37,17 +37,6 @@
 
             <div class="row">
               <div class="col-75">
-                <input
-                  type="text"
-                  formControlName="subject"
-                  [placeholder]="'CONTACT.PLACEHOLDERS.SUBJECT' | translate"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-75">
                 <select
                   formControlName="service"
                   [ngClass]="{
@@ -66,6 +55,21 @@
                     {{ "CONTACT.SERVICES." + service.key | translate }}
                   </option>
                 </select>
+              </div>
+            </div>
+
+            <!-- Subject field only shown if 'Other' service is selected -->
+            <div
+              class="row"
+              *ngIf="contactForm.get('service')?.value === 'Other'"
+            >
+              <div class="col-75">
+                <input
+                  type="text"
+                  formControlName="subject"
+                  [placeholder]="'CONTACT.PLACEHOLDERS.SUBJECT' | translate"
+                  required
+                />
               </div>
             </div>
 
