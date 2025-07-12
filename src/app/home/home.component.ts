@@ -62,13 +62,21 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   }
 
   downloadCV(): void {
+    const lang = this.translate.currentLang;
     const link = document.createElement('a');
     link.setAttribute('target', '_blank');
-    link.setAttribute('href', 'assets/files/CV_Edwin_Nunez.pdf');
-    link.setAttribute('download', 'CV_Edwin_Nunez.pdf');
+
+    if (lang === 'es') {
+      link.setAttribute('href', 'assets/files/CV_Edwin_Spanish.pdf');
+      link.setAttribute('download', 'CV_Edwin_Spanish.pdf');
+    } else {
+      link.setAttribute('href', 'assets/files/CV_Edwin_Nunez.pdf');
+      link.setAttribute('download', 'CV_Edwin_Nunez.pdf');
+    }
+
     document.body.appendChild(link);
     link.click();
-    document.body.appendChild(link);
+    document.body.removeChild(link);
   }
 
   ngOnDestroy(): void {
