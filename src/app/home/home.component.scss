@@ -481,13 +481,13 @@ h3 {
   }
 
   .prefix-text {
-    font-size: 26px;
+    font-size: 22px;
     padding: 0;
     margin: 0;
   }
 
   .typed-text {
-    font-size: 26px;
+    font-size: 22px;
     padding: 0;
     margin: 0;
   }
@@ -505,7 +505,7 @@ h3 {
 
   .download-social-inner {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
