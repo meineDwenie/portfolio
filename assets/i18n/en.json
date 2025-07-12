@@ -96,7 +96,7 @@
       "SPRINTER_REIMAGINED": "Figma",
       "FRUITAPI": "Figma",
       "SMOOTHIES": "Figma",
-      "EDWIN_PORTFOLIO": "Angular, TypeScript, Bootstrap, HTML, CSS, VS Code"
+      "EDWIN_PORTFOLIO": "Angular, TypeScript, ng-translate, NgRx, Bootstrap, HTML, CSS, VS Code"
     }
   },
 
@@ -152,7 +152,8 @@
       "WEBSITE_APPLICATION_DEVELOPMENT": "Website Application Development",
       "MOBILE_APP_DEVELOPMENT": "Mobile App Development",
       "UX_UI_DESIGNS": "UX / UI Designs",
-      "GRAPHIC_DESIGNS": "Graphic Designs"
+      "GRAPHIC_DESIGNS": "Graphic Designs",
+      "OTHER": "Other"
     },
     "BUTTON": {
       "SEND_INQUIRY": "Send inquiry",
