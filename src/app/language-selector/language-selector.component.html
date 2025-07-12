@@ -1,0 +1,20 @@
+<div class="language-select custom-dropdown">
+  <button class="selected-language" (click)="toggleLanguageDropdown()">
+    <img [src]="'assets/images/' + currentLang + '.png'" alt="lang" />
+    <p class="selected-lang" [style.color]="color">
+      {{ getLanguageLabel(currentLang) }}
+    </p>
+    <p class="chevron-unicode">⌵</p>
+  </button>
+
+  <ul class="language-options" *ngIf="languageDropdownOpen">
+    <li (click)="switchLang('en')">
+      <img src="assets/images/en.png" alt="English" />
+      <p class="option-lang">English</p>
+    </li>
+    <li (click)="switchLang('es')">
+      <img src="assets/images/es.png" alt="Español" />
+      <p class="option-lang">Español</p>
+    </li>
+  </ul>
+</div>

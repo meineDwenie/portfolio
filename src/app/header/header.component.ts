@@ -2,11 +2,17 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, CommonModule, TranslateModule],
+  imports: [
+    RouterModule,
+    CommonModule,
+    TranslateModule,
+    LanguageSelectorComponent,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -24,12 +30,8 @@ export class HeaderComponent {
   // Flag for showing/hiding certain elements (for demonstration)
   showContactButton = true;
   isMenuActive = false;
-  currentLang: string;
 
-  constructor(private translate: TranslateService) {
-    this.currentLang =
-      this.translate.currentLang || this.translate.getDefaultLang();
-  }
+  constructor(private translate: TranslateService) {}
 
   toggleMenu() {
     this.isMenuActive = !this.isMenuActive;
@@ -51,15 +53,5 @@ export class HeaderComponent {
         });
       }, 0.5);
     }
-  }
-
-  switchLang(lang: string) {
-    this.translate.use(lang);
-    this.currentLang = lang;
-  }
-
-  onLanguageChange(event: Event) {
-    const selectElement = event.target as HTMLSelectElement;
-    this.switchLang(selectElement.value);
   }
 }

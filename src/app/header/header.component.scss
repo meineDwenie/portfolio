@@ -162,28 +162,69 @@ nav a:hover {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-.language-select {
-  select {
-    background-color: transparent;
+/* Language dropwn */
+.language-select.custom-dropdown {
+  position: relative;
+
+  .selected-language {
+    display: flex;
+    align-items: center;
+    background: transparent;
     border: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 6px 12px;
-    color: #fff;
     cursor: pointer;
+
+    img {
+      width: 20px;
+      height: auto;
+      margin-right: 8px;
+    }
+
+    .selected-lang {
+      font-weight: 400;
+      font-size: 1rem;
+      color: white;
+    }
   }
 
-  option {
-    color: #000; // black text in dropdown list
+  .language-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0e0f0d;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    z-index: 999;
+
+    li {
+      display: flex;
+      align-items: center;
+      padding: 2px 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover {
+        background-color: #f2f2f2;
+      }
+
+      .option-lang {
+        font-weight: 400;
+        font-size: 0.9rem;
+        color: #82988f;
+      }
+
+      img {
+        width: 20px;
+        height: auto;
+        margin-right: 8px;
+      }
+
+      span {
+        font-weight: 400;
+      }
+    }
   }
-}
-
-.language-select select option.flag-en {
-  background-image: url("https://flagcdn.com/gb.svg");
-}
-
-.language-select select option.flag-es {
-  background-image: url("https://flagcdn.com/es.svg");
 }
 
 /************************************** 

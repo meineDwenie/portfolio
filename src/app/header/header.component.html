@@ -29,17 +29,8 @@
       </a>
     </nav>
 
-    <!-- Language Dropdown -->
-    <div class="language-select">
-      <select
-        id="languageDropdown"
-        [value]="currentLang"
-        (change)="onLanguageChange($event)"
-      >
-        <option value="en">🇬🇧 English</option>
-        <option value="es">🇪🇸 Español</option>
-      </select>
-    </div>
+    <!-- Language Selector Component -->
+    <app-language-selector [color]="'white'"></app-language-selector>
 
     <!-- Contact Me Button -->
     <div class="contact-button" *ngIf="showContactButton">

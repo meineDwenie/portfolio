@@ -1,0 +1,68 @@
+.language-select.custom-dropdown {
+  position: relative;
+  font-family: inherit;
+
+  .selected-language {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+
+    img {
+      width: 20px;
+      margin-right: 8px;
+    }
+
+    .selected-lang {
+      font-weight: 400;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .chevron-unicode {
+      margin-left: 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      line-height: 1;
+      color: white;
+    }
+  }
+
+  .language-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0e0f0d;
+    border: 1px solid #ccc;
+    padding: 0;
+    margin-top: 18px;
+    z-index: 999;
+    width: max-content;
+
+    li {
+      display: flex;
+      align-items: center;
+      padding: 14px 24px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background-color: #1a1a1a;
+      }
+
+      img {
+        width: 20px;
+        margin-right: 8px;
+      }
+
+      .option-lang {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #82988f;
+        margin: 0;
+      }
+    }
+  }
+}
