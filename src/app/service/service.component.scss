@@ -98,13 +98,37 @@
   }
 }
 
-// Optional scrollbar hiding for a clean belt look
+// scrollbar hiding
 .service-list::-webkit-scrollbar {
   display: none;
 }
 .service-list {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/* Text reveal animation classes */
+.service-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation for service cards */
+h3 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+h3.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /******************************************* 

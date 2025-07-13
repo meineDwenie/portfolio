@@ -1,5 +1,13 @@
-import { Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  AfterViewInit,
+  OnDestroy,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter, Subscription } from 'rxjs';
+import { AnimationService } from '../services/animation.service';
 import {
   FormGroup,
   FormControl,
@@ -15,7 +23,15 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent {
+export class ContactComponent implements AfterViewInit, OnDestroy {
+  private readonly COMPONENT_ID = 'contact-component';
+  private routerSubscription: Subscription | null = null;
+
+  constructor(
+    private animationService: AnimationService,
+    private router: Router
+  ) {}
+
   contactForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -90,5 +106,27 @@ export class ContactComponent {
         console.error('Error sending email:', error);
         this.isSubmitting = false;
       });
+  }
+
+  ngAfterViewInit(): void {
+    this.setupAnimations();
+
+    this.routerSubscription = this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => this.setupAnimations());
+  }
+
+  ngOnDestroy(): void {
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
+    this.animationService.cleanupObserver(this.COMPONENT_ID);
+  }
+
+  setupAnimations(): void {
+    this.animationService.setupAnimations(
+      this.COMPONENT_ID,
+      '#contact h3, #contact .contact-image-container img, #contact input, #contact select, #contact textarea, #contact button, #contact p'
+    );
   }
 }

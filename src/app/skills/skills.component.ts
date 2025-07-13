@@ -1,6 +1,15 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { AnimationService } from '../services/animation.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-skills',
@@ -10,8 +19,15 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './skills.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SkillsComponent {
+export class SkillsComponent implements AfterViewInit, OnDestroy {
   activeTab: 'hard' | 'soft' = 'hard';
+  private routerSubscription: Subscription | null = null;
+  private readonly COMPONENT_ID = 'skills-component';
+
+  constructor(
+    private router: Router,
+    private animationService: AnimationService
+  ) {}
 
   hardSkills = [
     { name: 'Angular', level: 70, icon: 'assets/images/angular_icon.png' },
@@ -88,6 +104,30 @@ export class SkillsComponent {
     'Good listener and communicator',
   ];
   */
+
+  ngAfterViewInit(): void {
+    this.setupAnimations();
+
+    this.routerSubscription = this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.setupAnimations();
+      });
+  }
+
+  ngOnDestroy(): void {
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
+    this.animationService.cleanupObserver(this.COMPONENT_ID);
+  }
+
+  setupAnimations(): void {
+    this.animationService.setupAnimations(
+      this.COMPONENT_ID,
+      '.skills-parent h3, .skills-left h4, .skills-left p, .skills-buttons button, .skills-card'
+    );
+  }
 
   switchTab(tab: 'hard' | 'soft') {
     this.activeTab = tab;

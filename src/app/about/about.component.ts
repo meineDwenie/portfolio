@@ -63,14 +63,4 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
       }, 0.5);
     }
   }
-
-  downloadCV(): void {
-    const link = document.createElement('a');
-    link.setAttribute('target', '_blank');
-    link.setAttribute('href', 'assets/files/CV_Edwin_Nunez.pdf');
-    link.setAttribute('download', 'CV_Edwin_Nunez.pdf');
-    document.body.appendChild(link);
-    link.click();
-    document.body.appendChild(link);
-  }
 }

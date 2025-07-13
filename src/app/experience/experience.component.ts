@@ -1,5 +1,13 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  AfterViewInit,
+  OnDestroy,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter, Subscription } from 'rxjs';
+import { AnimationService } from '../services/animation.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 interface ExperienceItem {
@@ -22,7 +30,15 @@ interface EducationItem {
   styleUrl: './experience.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExperienceComponent {
+export class ExperienceComponent implements AfterViewInit, OnDestroy {
+  private readonly COMPONENT_ID = 'experience-component';
+  private routerSubscription: Subscription | null = null;
+
+  constructor(
+    private animationService: AnimationService,
+    private router: Router
+  ) {}
+
   experience: ExperienceItem[] = [
     {
       years: '2025',
@@ -59,4 +75,26 @@ export class ExperienceComponent {
       school: 'EXPERIENCE.SCHOOLS.CEBU_NORMAL_UNIVERSITY',
     },
   ];
+
+  ngAfterViewInit(): void {
+    this.setupAnimations();
+
+    this.routerSubscription = this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => this.setupAnimations());
+  }
+
+  ngOnDestroy(): void {
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
+    this.animationService.cleanupObserver(this.COMPONENT_ID);
+  }
+
+  setupAnimations(): void {
+    this.animationService.setupAnimations(
+      this.COMPONENT_ID,
+      '#experience h3, #experience h4, #experience .item, #experience img'
+    );
+  }
 }

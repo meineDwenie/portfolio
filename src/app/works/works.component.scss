@@ -151,15 +151,6 @@ hr {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  /* Move animations to the image itself */
-  // &.slide-left {
-  //   animation: slideLeft 0.4s ease-in-out;
-  // }
-
-  // &.slide-right {
-  //   animation: slideRight 0.4s ease-in-out;
-  // }
 }
 
 .work-img.incoming-img {
@@ -248,28 +239,17 @@ hr {
   width: 100%;
 }
 
-/* Img Sliding effects */
-// @keyframes slideLeft {
-//   0% {
-//     transform: translateX(100%);
-//     opacity: 0;
-//   }
-//   100% {
-//     transform: translateX(0);
-//     opacity: 1;
-//   }
-// }
+/* Text reveal animation */
+.text-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
 
-// @keyframes slideRight {
-//   0% {
-//     transform: translateX(-100%);
-//     opacity: 0;
-//   }
-//   100% {
-//     transform: translateX(0);
-//     opacity: 1;
-//   }
-// }
+.text-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /******************************************* 
               RESPONSIVENESS
