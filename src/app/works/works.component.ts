@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -20,6 +20,7 @@ export class WorksComponent {
   private readonly COMPONENT_ID = 'works-component';
 
   currentIndex = 0;
+  imageAnimationClass = '';
 
   works = [
     {
@@ -118,7 +119,8 @@ export class WorksComponent {
 
   constructor(
     private router: Router,
-    private animationService: AnimationService
+    private animationService: AnimationService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngAfterViewInit(): void {
@@ -176,11 +178,93 @@ export class WorksComponent {
   }
 
   nextWork() {
-    this.currentIndex = (this.currentIndex + 1) % this.works.length;
+    this.triggerImageAnimation('next', () => {
+      this.currentIndex = (this.currentIndex + 1) % this.works.length;
+    });
   }
 
   prevWork() {
-    this.currentIndex =
-      (this.currentIndex - 1 + this.works.length) % this.works.length;
+    this.triggerImageAnimation('prev', () => {
+      this.currentIndex =
+        (this.currentIndex - 1 + this.works.length) % this.works.length;
+    });
+  }
+
+  triggerImageAnimation(direction: 'next' | 'prev', onComplete: () => void) {
+    const container = document.querySelector('.img-container');
+    if (!container) return;
+
+    // Calculate next/previous index
+    const nextIndex =
+      direction === 'next'
+        ? (this.currentIndex + 1) % this.works.length
+        : (this.currentIndex - 1 + this.works.length) % this.works.length;
+
+    // Create the incoming image element
+    const incomingImg = document.createElement('img');
+    incomingImg.src = this.works[nextIndex].image;
+    incomingImg.alt = this.works[nextIndex].title;
+    incomingImg.className = 'work-img incoming-img';
+    incomingImg.style.position = 'absolute';
+    incomingImg.style.top = '0';
+    incomingImg.style.left = '0';
+    incomingImg.style.width = '100%';
+    incomingImg.style.height = '100%';
+    incomingImg.style.objectFit = 'cover';
+
+    // Set initial position based on direction
+    if (direction === 'next') {
+      incomingImg.style.transform = 'translateX(100%)';
+    } else {
+      incomingImg.style.transform = 'translateX(-100%)';
+    }
+
+    // Add the incoming image to container
+    container.appendChild(incomingImg);
+
+    // Get current image
+    const currentImg = container.querySelector(
+      '.work-img:not(.incoming-img)'
+    ) as HTMLElement;
+
+    // Force reflow
+    void incomingImg.offsetWidth;
+
+    // Start animation
+    requestAnimationFrame(() => {
+      // Animate current image out
+      if (currentImg) {
+        currentImg.style.transition =
+          'transform 0.4s ease-in-out, opacity 0.4s ease-in-out';
+        if (direction === 'next') {
+          currentImg.style.transform = 'translateX(-100%)';
+        } else {
+          currentImg.style.transform = 'translateX(100%)';
+        }
+        currentImg.style.opacity = '0.3';
+      }
+
+      // Animate incoming image in
+      incomingImg.style.transition =
+        'transform 0.4s ease-in-out, opacity 0.4s ease-in-out';
+      incomingImg.style.transform = 'translateX(0)';
+      incomingImg.style.opacity = '1';
+
+      // Complete the transition
+      setTimeout(() => {
+        onComplete();
+        this.cdr.detectChanges();
+
+        // Clean up - remove old image and fix new one
+        if (currentImg) {
+          currentImg.remove();
+        }
+        incomingImg.className = 'work-img';
+        incomingImg.style.position = '';
+        incomingImg.style.transition = '';
+        incomingImg.style.transform = '';
+        incomingImg.style.opacity = '';
+      }, 400);
+    });
   }
 }
