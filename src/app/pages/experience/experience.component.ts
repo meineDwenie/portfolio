@@ -56,7 +56,7 @@ export class ExperienceComponent implements AfterViewInit, OnDestroy {
       company: 'EXPERIENCE.COMPANIES.QQ_ENGLISH',
     },
     {
-      years: '2014-2018',
+      years: '2014-2017',
       position: 'EXPERIENCE.POSITIONS.STUDENT_ASSISTANT',
       company: 'EXPERIENCE.COMPANIES.CEBU_NORMAL_UNIVERSITY',
     },
