@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { AnimationService } from '../services/animation.service';
+import { AnimationService } from '../../core/services/animation.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, Subscription } from 'rxjs';

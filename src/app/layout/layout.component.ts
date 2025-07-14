@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from '../header/header.component';
+import { HeaderComponent } from '../pages/header/header.component';
 import { RouterOutlet } from '@angular/router';
-import { FooterComponent } from '../footer/footer.component';
-import { BackToTopComponent } from '../back-to-top/back-to-top.component';
+import { FooterComponent } from '../pages/footer/footer.component';
+import { BackToTopComponent } from '../shared/back-to-top/back-to-top.component';
 
 @Component({
   selector: 'app-layout',

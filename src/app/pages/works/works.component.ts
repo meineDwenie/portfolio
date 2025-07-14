@@ -4,7 +4,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { AnimationService } from '../services/animation.service';
+import { AnimationService } from '../../core/services/animation.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({

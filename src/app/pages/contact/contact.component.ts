@@ -7,7 +7,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
-import { AnimationService } from '../services/animation.service';
+import { AnimationService } from '../../core/services/animation.service';
 import {
   FormGroup,
   FormControl,

@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import Typed from 'typed.js';
-import { AnimationService } from '../services/animation.service';
+import { AnimationService } from '../../core/services/animation.service';
 import { Subscription } from 'rxjs';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
