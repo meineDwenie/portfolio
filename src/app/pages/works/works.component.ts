@@ -52,7 +52,7 @@ export class WorksComponent {
         'A dating mobile app specially designed for seniors 60+, featuring intuitive navigation and profile matching.',
       tech: 'Unity, C#, PlayerPrefs, Google Play',
       image: 'assets/images/senecdates.png',
-      link: 'https://play.google.com/apps/test/com.CascadeGroupsCor.senecDates/13',
+      link: 'https://sites.google.com/view/senecdates/home',
       github: '',
       figma: '',
     },
