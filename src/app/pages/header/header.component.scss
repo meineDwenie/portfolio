@@ -115,6 +115,14 @@ nav a:hover {
   color: #d5dd6b;
 }
 
+.toggle-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
 /* Hamburger Menu */
 .menu-toggle {
   display: none;
@@ -227,6 +235,63 @@ nav a:hover {
   }
 }
 
+/* Mobile Language Dropdown */
+.mobile-lang-dropdown {
+  position: relative;
+  margin-right: 0;
+  padding: 10px;
+  display: none; // hidden by default
+
+  .flag-selector {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 8px;
+
+    img {
+      width: 22px;
+      height: auto;
+    }
+
+    .chevron-unicode {
+      margin-left: 2px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      line-height: 1;
+      color: white;
+    }
+  }
+
+  .flag-options {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background-color: #0e0f0d;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    list-style: none;
+    padding: 5px 16px;
+    margin: 0;
+    z-index: 999;
+
+    li {
+      padding: 6px;
+      margin: 0;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #1a1a1a;
+      }
+
+      img {
+        width: 20px;
+      }
+    }
+  }
+}
+
 /************************************** 
        Responsiveness 
 ***************************************/
@@ -291,6 +356,14 @@ nav a:hover {
     box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+  }
+
+  .nav-container app-language-selector {
+    display: none !important;
+  }
+
+  .mobile-lang-dropdown {
+    display: block;
   }
 
   .nav-container.active {

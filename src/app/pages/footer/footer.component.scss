@@ -240,7 +240,7 @@ nav a:hover {
   background-color: #d5dd6b; /* Solid green background */
   color: #171d18;
   padding: 4px 10px;
-  border-radius: 20px;
+  border-radius: 12px;
   border: 1px solid #eaeaea;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -249,7 +249,7 @@ nav a:hover {
   transition: transform 0.3s ease;
   //box-shadow: 6px 6px 6px rgba(255, 255, 254, 0.1);
   margin: 0;
-  width: auto;
+  width: 80%;
 }
 
 .downloadButton:hover {

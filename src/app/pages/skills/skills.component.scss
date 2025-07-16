@@ -117,9 +117,13 @@ p {
 }
 
 .skills-buttons button.active {
-  background-color: #d5dd6b;
-  color: #142820;
+  // background-color: #d5dd6b;
+  // color: #142820;
+  background-color: transparent;
+  border: 1px solid #d5dd6b;
+  color: #d5dd6b;
   font-weight: bold;
+  display: none;
 }
 
 /*

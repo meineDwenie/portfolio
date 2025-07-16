@@ -9,10 +9,33 @@
     </a>
   </div>
 
-  <!-- Hamburger Menu Button -->
-  <div class="menu-toggle" [class.active]="isMenuActive" (click)="toggleMenu()">
-    <i class="bx bx-menu"></i>
-      <i class="bx bx-x"></i>
+  <div class="toggle-buttons">
+    <!-- Language Dropdown (Mobile only) -->
+    <div class="mobile-lang-dropdown">
+      <div class="flag-selector" (click)="toggleLanguageDropdown()">
+        <img [src]="'assets/images/' + currentLang + '.png'" alt="lang" />
+        <p class="chevron-unicode">⌵</p>
+      </div>
+
+      <ul class="flag-options" *ngIf="languageDropdownOpen">
+        <li (click)="switchLang('en')">
+          <img src="assets/images/en.png" alt="English" />
+        </li>
+        <li (click)="switchLang('es')">
+          <img src="assets/images/es.png" alt="Español" />
+        </li>
+      </ul>
+    </div>
+
+    <!-- Hamburger Menu Button -->
+    <div
+      class="menu-toggle"
+      [class.active]="isMenuActive"
+      (click)="toggleMenu()"
+    >
+      <i class="bx bx-menu"></i>
+        <i class="bx bx-x"></i>
+    </div>
   </div>
 
   <!-- Navigation container with links -->

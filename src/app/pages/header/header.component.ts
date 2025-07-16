@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -30,8 +30,20 @@ export class HeaderComponent {
   // Flag for showing/hiding certain elements (for demonstration)
   showContactButton = true;
   isMenuActive = false;
+  languageDropdownOpen = false;
+  currentLang: string = 'en';
 
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService, private eRef: ElementRef) {
+    this.currentLang =
+      this.translate.currentLang || this.translate.getDefaultLang();
+  }
+
+  @HostListener('document:click', ['$event'])
+  handleClickOutside(event: MouseEvent) {
+    if (!this.eRef.nativeElement.contains(event.target)) {
+      this.languageDropdownOpen = false;
+    }
+  }
 
   toggleMenu() {
     this.isMenuActive = !this.isMenuActive;
@@ -40,6 +52,16 @@ export class HeaderComponent {
   handleNavClick(sectionId: string): void {
     this.goToSection(sectionId);
     this.isMenuActive = false;
+  }
+
+  toggleLanguageDropdown() {
+    this.languageDropdownOpen = !this.languageDropdownOpen;
+  }
+
+  switchLang(lang: string) {
+    this.translate.use(lang);
+    this.currentLang = lang;
+    this.languageDropdownOpen = false;
   }
 
   goToSection(sectionId: string): void {
