@@ -5,8 +5,7 @@
   align-items: center;
   //min-height: 100vh;
   padding: 80px 20px;
-  background-color: #1a2722 !important;
-  background: linear-gradient(135deg, #121a17, #18241d, #121a17);
+  //background-color: #1a2722 !important;
   background: linear-gradient(
     to right,
     #0d1412 0%,
@@ -292,6 +291,8 @@ p {
 @media screen and (max-width: 768px) {
   .contact-parent {
     padding: 5rem 1.8rem;
+    background: none;
+    background-color: #1a2722 !important;
   }
 
   .contact-content {

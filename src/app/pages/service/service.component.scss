@@ -224,6 +224,9 @@ h3.visible {
   .services-section {
     padding: 4.5rem 1rem 2rem;
 
+    background: none;
+    background-color: var(--bg-color);
+
     .background-text {
       font-size: 4.5rem;
       left: 8%;

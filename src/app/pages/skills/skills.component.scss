@@ -361,6 +361,8 @@ p {
 @media screen and (max-width: 768px) {
   .skills-parent {
     padding: 5rem 3%;
+    background: none;
+    background-color: var(--bg-color);
   }
 
   .skills-container {
