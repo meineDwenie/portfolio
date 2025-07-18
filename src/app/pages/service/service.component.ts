@@ -43,7 +43,9 @@ export class ServiceComponent implements AfterViewInit, OnDestroy {
     private router: Router,
     private animationService: AnimationService,
     private cdr: ChangeDetectorRef
-  ) {
+  ) {}
+
+  ngAfterViewInit(): void {
     const icons = ['bi-code-slash', 'bi-laptop', 'bi-phone', 'bi-palette'];
 
     this.translate.stream('SERVICES.LIST').subscribe((translated) => {
@@ -61,9 +63,7 @@ export class ServiceComponent implements AfterViewInit, OnDestroy {
 
       this.setupAnimations();
     });
-  }
 
-  ngAfterViewInit(): void {
     this.setupAnimations();
 
     // Listen for route changes

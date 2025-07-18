@@ -13,6 +13,22 @@
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transform: translateY(100px);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out,
+    box-shadow 0.3s ease, background-color 0.3s ease;
+  pointer-events: none; /* Prevents interaction when not visible */
+}
+
+.back-to-top-btn.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top-btn.clicked {
+  transform: scale(0.95);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .back-to-top-btn i {
@@ -22,7 +38,8 @@
 
 .back-to-top-btn:hover {
   opacity: 1;
-  color: black;
+  color: rgb(255, 255, 255) !important;
+  background-color: #30630d;
 }
 
 /******************************************* 

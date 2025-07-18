@@ -30,6 +30,7 @@ export class HeaderComponent {
   // Flag for showing/hiding certain elements (for demonstration)
   showContactButton = true;
   isMenuActive = false;
+  isClicked = false;
   languageDropdownOpen = false;
   currentLang: string = 'en';
 
@@ -52,6 +53,13 @@ export class HeaderComponent {
   handleNavClick(sectionId: string): void {
     this.goToSection(sectionId);
     this.isMenuActive = false;
+
+    // Add clicked animation
+    this.isClicked = true;
+    setTimeout(() => {
+      this.isClicked = false;
+    }, 200);
+    
   }
 
   toggleLanguageDropdown() {

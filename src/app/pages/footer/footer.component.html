@@ -27,7 +27,11 @@
         <span>Murcia, Murcia, Spain</span>
       </div>
 
-      <div class="downloadButton" (click)="downloadCV()">
+      <div
+        class="downloadButton"
+        (click)="downloadCV()"
+        [class.clicked]="isClicked"
+      >
         {{ "FOOTER.DOWNLOAD_CV" | translate }}
         <i class="bi bi-download download-icon"></i>
       </div>

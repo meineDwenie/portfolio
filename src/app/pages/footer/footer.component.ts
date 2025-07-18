@@ -10,6 +10,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
+  isClicked = false;
+
   constructor(private translate: TranslateService) {}
 
   goToSection(sectionId: string): void {
@@ -42,5 +44,11 @@ export class FooterComponent {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+    // Add clicked animation
+    this.isClicked = true;
+    setTimeout(() => {
+      this.isClicked = false;
+    }, 200);
   }
 }

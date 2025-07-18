@@ -1,7 +1,8 @@
 <button
-  *ngIf="isVisible"
   (click)="scrollToTop()"
   class="back-to-top-btn"
+  [class.show]="isVisible"
+  [class.clicked]="isClicked"
   aria-label="Back to top"
 >
   <i class="bi bi-chevron-double-up"></i>

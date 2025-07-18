@@ -54,7 +54,19 @@ export class WorksComponent {
       image: 'assets/images/senecdates.png',
       link: 'https://sites.google.com/view/senecdates/home',
       github: 'https://github.com/meineDwenie/SenecDates',
-      figma: 'https://www.figma.com/proto/8J9Sgi4Zaz7PNl4yHpOwV5/senecDATES?node-id=0-1&t=zN7o6zx1sFMbQN7s-1',
+      figma:
+        'https://www.figma.com/proto/8J9Sgi4Zaz7PNl4yHpOwV5/senecDATES?node-id=0-1&t=zN7o6zx1sFMbQN7s-1',
+    },
+    {
+      category: 'Web App - Full Stack',
+      title: 'Edwin. Portfolio',
+      description:
+        'A personal developer portfolio showcasing skills, technologies, and work history in a sleek, responsive layout.',
+      tech: 'Angular, TypeScript, Ng-translate, NgRx, RxJs Bootstrap, HTML, CSS, VS Code',
+      image: 'assets/images/portfolio.png',
+      link: 'https://meinedwenie.github.io/portfolio/',
+      github: 'https://github.com/meineDwenie/portfolio',
+      figma: '',
     },
     {
       category: 'Mobile App - Full Stack',
@@ -103,17 +115,6 @@ export class WorksComponent {
       github: '',
       figma:
         'https://www.figma.com/proto/VINOe1SMDevnvjUViVTqWQ/Smoothies?node-id=0-1&t=rNDyl02KVRFWrYL6-1',
-    },
-    {
-      category: 'Web App - Full Stack',
-      title: 'Edwin. Portfolio',
-      description:
-        'A personal developer portfolio showcasing skills, technologies, and work history in a sleek, responsive layout.',
-      tech: 'Angular, TypeScript, Ng-translate, NgRx, RxJs Bootstrap, HTML, CSS, VS Code',
-      image: 'assets/images/portfolio.png',
-      link: 'https://meinedwenie.github.io/portfolio/',
-      github: 'https://github.com/meineDwenie/portfolio',
-      figma: '',
     },
   ];
 

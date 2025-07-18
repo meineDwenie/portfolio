@@ -1,14 +1,13 @@
 html,
 body {
   scroll-behavior: smooth;
-  scroll-padding-top: 0px; // removed the top padding solved spacing issues
+  scroll-padding-top: 0px;
 
   margin: 0;
   padding: 0;
   width: 100%;
   max-width: 100%;
-  //overflow-x: hidden; // Prevent horizontal scrolling
-  box-sizing: border-box; // Include padding and border in element's total width and height
+  box-sizing: border-box;
   background: var(--bg-color);
   color: var(--text-color);
 }

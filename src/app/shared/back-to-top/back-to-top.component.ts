@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,10 +11,11 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './back-to-top.component.html',
   styleUrl: './back-to-top.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BackToTopComponent {
   isVisible = false;
+  isClicked = false;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -19,10 +24,16 @@ export class BackToTopComponent {
   }
 
   scrollToTop() {
+    this.isClicked = true;
+
     // Scroll to top smoothly
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
+
+    setTimeout(() => {
+      this.isClicked = false;
+    }, 300);
   }
 }
