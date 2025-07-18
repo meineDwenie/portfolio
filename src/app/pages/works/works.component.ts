@@ -53,8 +53,8 @@ export class WorksComponent {
       tech: 'Unity, C#, PlayerPrefs, Google Play',
       image: 'assets/images/senecdates.png',
       link: 'https://sites.google.com/view/senecdates/home',
-      github: '',
-      figma: '',
+      github: 'https://github.com/meineDwenie/SenecDates',
+      figma: 'https://www.figma.com/proto/8J9Sgi4Zaz7PNl4yHpOwV5/senecDATES?node-id=0-1&t=zN7o6zx1sFMbQN7s-1',
     },
     {
       category: 'Mobile App - Full Stack',
